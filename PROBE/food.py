@@ -60,14 +60,14 @@ blueberry = {
     'texture': 'juicy'
 }
 
-orange_juice = {
-    'name': 'Orange Juice',
-    'satiety': 2,
-    'hydration': 8,
-    'toxicity': 0,
+elderberry = {
+    'name': 'Elderberry',
+    'satiety': 1,
+    'hydration': 6,
+    'toxicity': 6,
     'taste': 'sweet',
-    'vitamins': ['C'],
-    'texture': 'liquid'
+    'vitamins': ['C', 'K'],
+    'texture': 'juicy'
 }
 
 coconut_water = {
@@ -80,14 +80,14 @@ coconut_water = {
     'texture': 'refreshing'
 }
 
-tomato_juice = {
-    'name': 'Tomato Juice',
-    'satiety': 2,
-    'hydration': 8,
+potato = {
+    'name': 'Potato',
+    'satiety': 6,
+    'hydration': 3,
     'toxicity': 0,
-    'taste': 'salty',
-    'vitamins': ['A', 'C'],
-    'texture': 'liquid'
+    'taste': 'starchy',
+    'vitamins': ['B6', 'C'],
+    'texture': 'soft'
 }
 
 maple_syrup = {

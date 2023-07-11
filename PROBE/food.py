@@ -1,5 +1,3 @@
-
-
 # food.py
 
 apple = {

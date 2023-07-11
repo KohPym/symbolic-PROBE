@@ -2,6 +2,7 @@
 
 apple = {
     'name': 'Apple',
+    'type': 'food',
     'satiety': 8,
     'vitamins': 2,
     'hydration': 5,
@@ -13,6 +14,7 @@ apple = {
 
 salmon = {
     'name': 'Salmon',
+    'type': 'food',
     'satiety': 7,
     'vitamins': 2,
     'hydration': 2,
@@ -24,6 +26,7 @@ salmon = {
 
 mushroom = {
     'name': 'Mushroom',
+    'type': 'food',
     'satiety': 5,
     'vitamins': 2,
     'hydration': 1,
@@ -35,6 +38,7 @@ mushroom = {
 
 blueberry = {
     'name': 'Blueberry',
+    'type': 'food',
     'satiety': 4,
     'vitamins': 2,
     'hydration': 6,
@@ -46,6 +50,7 @@ blueberry = {
 
 elderberry = {
     'name': 'Elderberry',
+    'type': 'food',
     'satiety': 3,
     'vitamins': 2,
     'hydration': 6,
@@ -57,6 +62,7 @@ elderberry = {
 
 potato = {
     'name': 'Potato',
+    'type': 'food',
     'satiety': 6,
     'vitamins': 1,
     'hydration': 3,
@@ -68,6 +74,7 @@ potato = {
 
 cactus = {
     'name': 'Cactus',
+    'type': 'food',
     'satiety': 3,
     'vitamins': 1,
     'hydration': 10,
@@ -79,6 +86,7 @@ cactus = {
 
 water = {
     'name': 'Water',
+    'type': 'liquid',
     'satiety': 0,
     'vitamins': 0,
     'hydration': 10,
@@ -90,6 +98,7 @@ water = {
 
 coconut_water = {
     'name': 'Coconut Water',
+    'type': 'liquid',
     'satiety': 1,
     'vitamins': 2,
     'hydration': 9,
@@ -101,6 +110,7 @@ coconut_water = {
 
 maple_syrup = {
     'name': 'Maple Syrup',
+    'type': 'liquid',
     'satiety': 1,
     'vitamins': 0,
     'hydration': 5,

@@ -120,4 +120,4 @@ maple_syrup = {
     'color': 'brown'
 }
 
-resting_places = [apple, salmon, mushroom, blueberry, elderberry, potato, cactus ,water, coconut_water, maple_syrup]
+food = [apple, salmon, mushroom, blueberry, elderberry, potato, cactus ,water, coconut_water, maple_syrup]

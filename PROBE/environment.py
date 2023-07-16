@@ -8,6 +8,7 @@ class Environment:
                        biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.biome11]
         self.current_biome = None
         self.current_food = []
+        self.predation_level = None
 
     def choose_biome(self):
         self.current_biome = random.choice(self.biomes)
@@ -25,6 +26,9 @@ class Environment:
                           food.cactus, food.water, food.coconut_water, food.maple_syrup]:
             if self.compare_attributes(food_item):
                 self.current_food.append(food_item)
+                
+    def choose_predation(self):
+        self.predation_level = random.randint(0, 100)
 
     def multiply_food(self):
         for food_item in self.current_food:

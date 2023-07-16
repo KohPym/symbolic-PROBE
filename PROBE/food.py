@@ -11,7 +11,6 @@ apple = {
     'vegetation': True,
     'water': True,
     'altitude': random.randint(0, 1000),
-    'oxygen': 'moderate'
 }
 
 mushroom = {
@@ -25,7 +24,6 @@ mushroom = {
     'vegetation': True,
     'water': True,
     'altitude': random.randint(-1000, 2000),
-    'oxygen': 'moderate'
 }
 
 blueberry = {
@@ -39,7 +37,6 @@ blueberry = {
     'vegetation': True,
     'water': True,
     'altitude': random.randint(0, 500),
-    'oxygen': 'moderate'
 }
 
 elderberry = {
@@ -53,7 +50,6 @@ elderberry = {
     'vegetation': True,
     'water': True,
     'altitude': random.randint(0, 500),
-    'oxygen': 'moderate'
 }
 
 potato = {
@@ -67,7 +63,6 @@ potato = {
     'vegetation': True,
     'water': True,
     'altitude': random.randint(0, 300),
-    'oxygen': 'moderate'
 }
 
 salmon = {
@@ -81,7 +76,6 @@ salmon = {
     'vegetation': False,
     'water': True,
     'altitude': random.randint(-1000, 300),
-    'oxygen': 'low'
 }
 
 cactus = {
@@ -95,7 +89,6 @@ cactus = {
     'vegetation': False,
     'water': False,
     'altitude': random.randint(0, 300),
-    'oxygen': 'low'
 }
 
 water = {
@@ -109,7 +102,6 @@ water = {
     'vegetation': False,
     'water': True,
     'altitude': random.randint(-2000, 1000),
-    'oxygen': 'moderate'
 }
 
 coconut_water = {
@@ -123,7 +115,6 @@ coconut_water = {
     'vegetation': True,
     'water': True,
     'altitude': random.randint(0, 1000),
-    'oxygen': 'high'
 }
 
 maple_syrup = {
@@ -137,5 +128,4 @@ maple_syrup = {
     'vegetation': False,
     'water': True,
     'altitude': random.randint(0,800)
-    'oxygen': 'moderate'
 }

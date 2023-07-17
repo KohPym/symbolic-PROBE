@@ -1,5 +1,5 @@
 from typing import List
-from biomes import BIOMES
+from .. import biomes
 
 class ContextualModelFlee:
     def __init__(self):

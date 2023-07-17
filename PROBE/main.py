@@ -3,7 +3,7 @@ from agent import Agent
 
 # Create the environment and agent
 env = Environment()
-agent = Agent() # arg = 1,2 or 3 := difficulty
+agent = Agent(delta=2) # arg = 1,2 or 3 := difficulty
 
 # Print the initial state of the environment and agent
 print("Current biome: ", env.current_biome)

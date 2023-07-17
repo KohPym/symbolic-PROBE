@@ -5,6 +5,9 @@ from agent import Agent
 env = Environment()
 agent = Agent(delta=2) # arg = 1,2 or 3 := difficulty
 
+# Get the user's input for aversion to risk
+risk_aversion = float(input("Enter your aversion to risk (a number between 0 and 100): "))
+
 # Print the initial state of the environment and agent
 print("Current biome: ", env.current_biome)
 print("Current food: ")

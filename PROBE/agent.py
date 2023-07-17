@@ -1,5 +1,5 @@
 # C'est bob !
-
+ 
 class Agent:
     def __init__(self, delta=2):
         self.health = 50

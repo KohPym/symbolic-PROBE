@@ -129,3 +129,16 @@ maple_syrup = {
     'water': True,
     'altitude': random.randint(0,800)
 }
+
+random = {
+    'name': 'Random Food',
+    'type': random.choice(['liquid', 'food']),
+    'satiety': random.randint(0,10),
+    'vitamins': random.randint(0,10),
+    'hydration': random.randint(0,10),
+    'toxicity': random.randint(0,10),
+    'humidity': random.choice(['wet', 'moderate', 'dry']),
+    'vegetation': random.choice([True, False]),
+    'water': random.choice([True, False]),
+    'altitude': random.randint(0,5000)
+}

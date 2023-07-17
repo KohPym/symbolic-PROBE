@@ -27,10 +27,8 @@ class Environment:
         # Définition aléatoire de la température
         self.temperature = random.choice(['hot', 'cold'])
         
-        # Définition aléatoire de la mouillure
         self.wetness = random.randint(0, 100)
         
-        # Définition aléatoire de la prédation
         self.predation = random.randint(0, 100)
         
     def __str__(self):

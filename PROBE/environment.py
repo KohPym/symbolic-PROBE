@@ -21,40 +21,40 @@ class Environment:
 
     def compare_attributes(self, food_item):
         """
-        Initialize main attributes of the agent. Set the difficulty for the agent to survive in the environment, using the delta parameter.
-        This parameter do have an impact on natural decrease of energy, satiety and hydration of the agent.
+        Comparison between the attributes of the selected biome and the food available in order to match both of the generation.
+        (Meaning that we will not find any cactus in toundra ...)
 
         Args:
-            food_item (str) -- Difficulty of the environment, between 1 and 3 (included), default value is 2.
+            food_item (str) -- Food to compare with the biome..
         """
-        attributes_to_compare = ["humidity", "vegetation", "water"]
+        attributes_to_compare = ["humidity", "vegetation", "water"] # Can be modified but must be attributes shared between food and biome
         for attribute in attributes_to_compare:
             if attribute in self.current_biome and attribute in food_item and self.current_biome[attribute] != food_item[attribute]:
                 return False
         return True
 
     def choose_food(self):
+        """
+        Choose food to build the environment based on all food existing in food.py and the matching attributes between the selected biomes and potential food.
+        """
         self.current_food = []
         for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6,
-                          food.food7, food.food8, food.food9, food.food10]:
-                              
-                              # food.random is not yet added but exist inside the food.py
-                              
+                          food.food7, food.food8, food.food9, food.food10]:                              
+                              # food.random is not yet added but exist inside the food.py file                             
             if self.compare_attributes(food_item):
                 self.current_food.append(food_item)
-
-# self.current_food = [food_item for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6, food.food7, food.food8, food.food9, food.food10] if self.compare_attributes(food_item)]
-# Pour une meilleure compréhension et portabilité du projet, je n'ai pas utilisé list comprehension mais le code est ci-dessus en commentaire.
+        # Below a list comprehension of the previous loop, avoided to insure a better portability and readibility of the code.
+        # self.current_food = [food_item for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6, food.food7, food.food8, food.food9, food.food10] if self.compare_attributes(food_item)]
                 
     def choose_predation(self):
         """
-        Initilisation du niveau de prédation (en pourcentage) pour déterminer la dangerosité (animale) de l'environnement.
+        Initilization of the predation's level (percentage) to determine the dangerosity (animal) of the environment. Value between 0 and 100. 0 meaning no risk.
         """
         self.predation_level = random.randint(0, 100)
 
     def multiply_food(self):
         """
-        Initilisation des variables de quantité de nourriture dans l'environnement et ainsi, le niveau de satiété, hydratation, toxicité et vitamine associés.
+        Initilization food's quantity variables of the environment and thus, the level of satiety, hydration, toxicity and vitamins associated to the food (and the environment).
         """
         for food_item in self.current_food:
             food_item['quantity'] = random.randint(1, 5)

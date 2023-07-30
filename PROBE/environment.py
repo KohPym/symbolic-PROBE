@@ -5,18 +5,28 @@ import biomes
 class Environment:
     def __init__(self):
         """
-        
+        Initialization of biomes and food variables (from food.py and biomes.py)
         """
         self.biomes = [biomes.biome1, biomes.biome2, biomes.biome3, biomes.biome4, biomes.biome5, biomes.biome6,
-                       biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.biome11]
+                       biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.random]
         self.current_biome = None
         self.current_food = []
         self.predation_level = None
 
     def choose_biome(self):
+        """
+        Random choice of biome.
+        """
         self.current_biome = random.choice(self.biomes)
 
     def compare_attributes(self, food_item):
+        """
+        Initialize main attributes of the agent. Set the difficulty for the agent to survive in the environment, using the delta parameter.
+        This parameter do have an impact on natural decrease of energy, satiety and hydration of the agent.
+
+        Args:
+            food_item (str) -- Difficulty of the environment, between 1 and 3 (included), default value is 2.
+        """
         attributes_to_compare = ["humidity", "vegetation", "water"]
         for attribute in attributes_to_compare:
             if attribute in self.current_biome and attribute in food_item and self.current_biome[attribute] != food_item[attribute]:

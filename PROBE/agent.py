@@ -1,7 +1,7 @@
 # C'est bob !
  
 class Agent:
-    def __init__(self, delta=2, health=50, energy=80, toxicity=0, hydration=80, toxicity=0):
+    def __init__(self, delta=2, health=50, energy=80, satiety=80, hydration=80, toxicity=0):
      """
      Initialize main attributes of the agent. Set the difficulty for the agent to survive in the environment, using the delta parameter.
      This parameter do have an impact on natural decrease of energy, satiety and hydration of the agent.
@@ -13,11 +13,11 @@ class Agent:
         satiety (int) -- Satiety of the agent. 
      """
         self.delta = delta
-        self.health = 50
-        self.energy = 80
-        self.satiety = 80
-        self.hydration = 80
-        self.toxicity = 0
+        self.health = health
+        self.energy = energy
+        self.satiety = satiety
+        self.hydration = hydration
+        self.toxicity = toxicity
 
     def update(self):
      """

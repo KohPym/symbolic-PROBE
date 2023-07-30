@@ -1,5 +1,20 @@
 import random
 
+# This file contains all biomes required for the environment, that will be selected randomly at each time point. It also include a random biome with random attributes.
+# Attributes refers to the 'name', 'humidity', 'temperature', 'predation', 'vegetation', 'water', 'altitude' and 'oxygen'.
+# The random biome can be seen both as an independant biome and a prototype, giving the range of the attributes of all others biomes.
+
+random = {
+    'name': 'Random Biome',
+    'humidity': random.choice(['wet', 'moderate', 'dry']),
+    'temperature': random.randint(-30, 50),
+    'predation': random.choice(['low', 'medium', 'high']),
+    'vegetation': random.choice([True, False]),
+    'water': random.choice([True, False]),
+    'altitude': random.randint(0, 5000),
+    'oxygen': random.choice(['low', 'normal', 'high']),
+}
+
 biome1 = {
     'name': 'Rainforest',
     'humidity': 'wet',
@@ -108,15 +123,4 @@ biome10 = {
     'water': True,
     'altitude': random.randint(0, 100),
     'oxygen': 'normal',
-}
-
-random = {
-    'name': 'Random Biome',
-    'humidity': random.choice(['wet', 'moderate', 'dry']),
-    'temperature': random.randint(-30, 50),
-    'predation': random.choice(['low', 'medium', 'high']),
-    'vegetation': random.choice([True, False]),
-    'water': random.choice([True, False]),
-    'altitude': random.randint(0, 5000),
-    'oxygen': random.choice(['low', 'normal', 'high']),
 }

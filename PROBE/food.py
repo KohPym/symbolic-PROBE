@@ -1,6 +1,6 @@
 import random
 
-apple = {
+food1 = {
     'name': 'Apple',
     'type': 'food',
     'satiety': 8,
@@ -13,7 +13,7 @@ apple = {
     'altitude': random.randint(0, 1000),
 }
 
-mushroom = {
+food2 = {
     'name': 'Mushroom',
     'type': 'food',
     'satiety': 5,
@@ -26,7 +26,7 @@ mushroom = {
     'altitude': random.randint(-1000, 2000),
 }
 
-blueberry = {
+food3 = {
     'name': 'Blueberry',
     'type': 'food',
     'satiety': 4,
@@ -39,7 +39,7 @@ blueberry = {
     'altitude': random.randint(0, 500),
 }
 
-elderberry = {
+food4 = {
     'name': 'Elderberry',
     'type': 'food',
     'satiety': 3,
@@ -52,7 +52,7 @@ elderberry = {
     'altitude': random.randint(0, 500),
 }
 
-potato = {
+food5 = {
     'name': 'Potato',
     'type': 'food',
     'satiety': 6,
@@ -65,7 +65,7 @@ potato = {
     'altitude': random.randint(0, 300),
 }
 
-salmon = {
+food6 = {
     'name': 'Salmon',
     'type': 'food',
     'satiety': 7,
@@ -78,7 +78,7 @@ salmon = {
     'altitude': random.randint(-1000, 300),
 }
 
-cactus = {
+food7 = {
     'name': 'Cactus',
     'type': 'food',
     'satiety': 3,
@@ -91,7 +91,7 @@ cactus = {
     'altitude': random.randint(0, 300),
 }
 
-water = {
+food8 = {
     'name': 'Water',
     'type': 'liquid',
     'satiety': 0,
@@ -104,7 +104,7 @@ water = {
     'altitude': random.randint(-2000, 1000),
 }
 
-coconut_water = {
+food9 = {
     'name': 'Coconut Water',
     'type': 'liquid',
     'satiety': 1,
@@ -117,7 +117,7 @@ coconut_water = {
     'altitude': random.randint(0, 1000),
 }
 
-maple_syrup = {
+food10 = {
     'name': 'Maple Syrup',
     'type': 'liquid',
     'satiety': 1,

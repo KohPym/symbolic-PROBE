@@ -37,9 +37,15 @@ class Environment:
 # Pour une meilleure compréhension et portabilité du projet, je n'ai pas utilisé list comprehension mais le code est ci-dessus en commentaire.
                 
     def choose_predation(self):
+        """
+        Initilisation du niveau de prédation (en pourcentage) pour déterminer la dangerosité (animale) de l'environnement.
+        """
         self.predation_level = random.randint(0, 100)
 
     def multiply_food(self):
+        """
+        Initilisation des variables de quantité de nourriture dans l'environnement et ainsi, le niveau de satiété, hydratation, toxicité et vitamine associés.
+        """
         for food_item in self.current_food:
             food_item['quantity'] = random.randint(1, 5)
             food_item['satiety'] = food_item['satiety'] * food_item['quantity']

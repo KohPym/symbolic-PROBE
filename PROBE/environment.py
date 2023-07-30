@@ -4,6 +4,9 @@ import biomes
 
 class Environment:
     def __init__(self):
+        """
+        
+        """
         self.biomes = [biomes.biome1, biomes.biome2, biomes.biome3, biomes.biome4, biomes.biome5, biomes.biome6,
                        biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.biome11]
         self.current_biome = None
@@ -29,6 +32,9 @@ class Environment:
                               
             if self.compare_attributes(food_item):
                 self.current_food.append(food_item)
+
+# self.current_food = [food_item for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6, food.food7, food.food8, food.food9, food.food10] if self.compare_attributes(food_item)]
+# Pour une meilleure compréhension et portabilité du projet, je n'ai pas utilisé list comprehension mais le code est ci-dessus en commentaire.
                 
     def choose_predation(self):
         self.predation_level = random.randint(0, 100)

@@ -1,5 +1,22 @@
 import random
 
+# This file contains all foods required for the environment, that will be selected randomly for a specific biome. It also include a random food with random attributes.
+# Attributes refers to the 'name', 'type', 'satiety', 'vitamins', 'hydration', 'toxicity', 'humidity', 'vegetation', 'water' and 'altitude'.
+# The random food can be seen both as an independant food and a prototype, giving the range of the attributes of all others foods.
+
+random = {
+    'name': 'Random Food',
+    'type': random.choice(['liquid', 'food']),
+    'satiety': random.randint(0,10),
+    'vitamins': random.randint(0,10),
+    'hydration': random.randint(0,10),
+    'toxicity': random.randint(0,10),
+    'humidity': random.choice(['wet', 'moderate', 'dry']),
+    'vegetation': random.choice([True, False]),
+    'water': random.choice([True, False]),
+    'altitude': random.randint(0,5000)
+}
+
 food1 = {
     'name': 'Apple',
     'type': 'food',
@@ -128,17 +145,4 @@ food10 = {
     'vegetation': False,
     'water': True,
     'altitude': random.randint(0,800)
-}
-
-random = {
-    'name': 'Random Food',
-    'type': random.choice(['liquid', 'food']),
-    'satiety': random.randint(0,10),
-    'vitamins': random.randint(0,10),
-    'hydration': random.randint(0,10),
-    'toxicity': random.randint(0,10),
-    'humidity': random.choice(['wet', 'moderate', 'dry']),
-    'vegetation': random.choice([True, False]),
-    'water': random.choice([True, False]),
-    'altitude': random.randint(0,5000)
 }

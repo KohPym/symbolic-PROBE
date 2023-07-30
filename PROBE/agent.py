@@ -23,6 +23,8 @@ class Agent:
         self.satiety = max(0, self.satiety)
         self.hydration = max(0, self.hydration)
 
+# A noter que nous pouvons utiliser une méthode globale pour la modification des attributs de l'agent (modify(0,0,0,5,0) par exemple) mais dans un soucis de lecture, j'ai privilégié des parties indépendantes.
+ 
     def modify_energy(self, value):
         self.energy += value
 

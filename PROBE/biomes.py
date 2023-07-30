@@ -110,7 +110,7 @@ biome10 = {
     'oxygen': 'normal',
 }
 
-biome11 = {
+random = {
     'name': 'Random Biome',
     'humidity': random.choice(['wet', 'moderate', 'dry']),
     'temperature': random.randint(-30, 50),

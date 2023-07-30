@@ -63,7 +63,10 @@ class Environment:
             food_item['toxicity'] = food_item['toxicity'] * food_item['quantity']
             food_item['vitamins'] = food_item['vitamins'] * food_item['quantity']
 
-    def create_matrix(self):
+    def summary_matrix(self):
+        """
+        Matrix summarizing the whole level of satiety, hydration, vitamins, toxicity and quantity of the current environment. This will help to see clearly the evolution of the environment.
+        """
         matrix = []
         headers = ["Satiety", "Hydration", "Vitamins", "Toxicity", "Quantity"]
         for food_item in self.current_food:

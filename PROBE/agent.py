@@ -1,4 +1,4 @@
-# C'est bob !
+# C'est bob ! 
  
 class Agent:
     def __init__(self, delta=2, health=50, energy=80, satiety=80, hydration=80, toxicity=0):

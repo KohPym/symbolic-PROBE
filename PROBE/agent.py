@@ -8,7 +8,7 @@ class Agent:
 
         Args:
             delta (int) -- Difficulty of the environment, between 1 and 3 (included), default value is 2.
-            health (int) -- Health of the agent. If health reach 0, the game is over (On a "Game Over" Mario's Theme). https://www.youtube.com/watch?v=BVQ_JHmvhCM. It can oscillate between 0 and 100, default value is 50.
+            health (int) -- Health of the agent. If health reach 0, the game is over (On a "Game Over" Mario's Theme). It can oscillate between 0 and 100, default value is 50.
             energy (int) -- Energy of the agent. It can be modified by the vitamin's level of food from the environment. If it reach 0, the agent is forced to rest. Value between 0 and 100, default value is 80.
             satiety (int) -- Satiety of the agent. It is changed by the food's satiety that is consumed by the agent. If it reach 0, the agent lose 1 additionnal health per time unit. Value between 0 and 100, default to 80.
             hydration (int) -- Hydration of the agent. It is changed by the food's hydration. If it reach 0, the agent lose 3 additionnal health per time unit. Value between 0 and 100, default to 80.

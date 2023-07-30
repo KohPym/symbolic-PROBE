@@ -27,7 +27,11 @@ class Agent:
         self.health -= self.toxicity / 10
         self.energy -= self.delta / 2
         self.satiety -= self.delta / 2
+        if self.satiety <= 0:
+            self.health -= 1
         self.hydration -= self.delta / 2
+        if self.hydration <= 0:
+            self.health -= 3
         self.toxicity -= 1
      
         self.health = max(0, min(100, self.health))

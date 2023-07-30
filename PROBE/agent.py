@@ -1,41 +1,100 @@
 # C'est bob !
  
 class Agent:
-    def __init__(self, delta=2):
+    def __init__(self, delta=2, health=50, energy=80, toxicity=0, hydration=80, toxicity=0):
+     """
+     Initialize main attributes of the agent. Set the difficulty for the agent to survive in the environment, using the delta parameter.
+     This parameter do have an impact on natural decrease of energy, satiety and hydration of the agent.
+
+     Args:
+        delta (int) -- Difficulty of the environment, between 1 and 3 (included), default value is 2.
+        health (int) -- Health of the agent. If health reach 0, the game is over (On a "Game Over" Mario's Theme). It can oscillate between 0 and 100, default value is 50.
+        energy (int) -- Energy of the agent. It can be modified by the vitamin's level of food from the environment. If it reach 0, the agent is forced to rest. Value between 0 and 100, default value is 80.
+        satiety (int) -- Satiety of the agent. 
+     """
+        self.delta = delta
         self.health = 50
         self.energy = 80
-        self.toxicity = 0
         self.satiety = 80
         self.hydration = 80
-        self.delta = delta
+        self.toxicity = 0
 
     def update(self):
+     """
+     Update the agent's level of attributes such as energy and satiety. This method only apply the natural decrease such as losing energy as time passes.
+     The natural decrease, at each time point, is equal to 1 (for delta = 2, the default value). 
+     """
+        self.health -= self.toxicity / 10
         self.energy -= self.delta / 2
         self.satiety -= self.delta / 2
         self.hydration -= self.delta / 2
         self.toxicity -= 1
-        self.toxicity = max(0, self.toxicity)
+     
+        self.health = max(0, min(100, self.health))
+        self.energy = max(0, min(100, self.energy))
+        self.satiety = max(0, min(100, self.satiety))
+        self.hydration = max(0, min(100, self.hydration))
+        self.toxicity = max(0, min(100, self.toxicity))
+     
+     # Below a simplified version (but harder to read and less flexible)
+     # self.health = max(0, min(100, self.health - self.toxicity / 10))
+     # self.energy = max(0, min(100, self.energy - self.delta / 2))
+     # self.satiety = max(0, min(100, self.satiety - self.delta / 2))
+     # self.hydration = max(0, min(100, self.hydration - self.delta / 2))
+     # self.toxicity = max(0, min(100, self.toxicity - 1))
 
-        self.health -= self.toxicity / 10
+     def modify_delta(self, delta):
+     """
+     Modifies the difficulty for the agent to survive in the environment. This allow to modify the impact on the environment without changing it.
 
-        self.health = max(0, self.health)
-        self.energy = max(0, self.energy)
-        self.satiety = max(0, self.satiety)
-        self.hydration = max(0, self.hydration)
+     Args:
+        delta (int) -- The difficulty if the agent to survive in the enrivonment, between 1 and 3 (included).
+     """
+        self.delta = delta
+     
+     def modify_health(self, value):
+     """
+     Modifies the agent's health level.
 
-# A noter que nous pouvons utiliser une méthode globale pour la modification des attributs de l'agent (modify(0,0,0,5,0) par exemple) mais dans un soucis de lecture, j'ai privilégié des parties indépendantes.
+     Args:
+        value (int) -- Amount of health to add on the current value on the agent, can be negative.
+     """
+        self.health += value
  
     def modify_energy(self, value):
+     """
+     Modifies the agent's energy level.
+
+     Args:
+        value (int) -- Amount of energy to add on the current value on the agent, can be negative.
+     """
         self.energy += value
 
     def modify_satiety(self, value):
+     """
+     Modifies the agent's satiety level.
+
+     Args:
+        value (int) -- Amount of satiety to add on the current value on the agent, can be negative.
+     """
         self.satiety += value
 
+    def modify_hydration(self, value):
+     """
+     Modifies the agent's hydration level.
+
+     Args:
+        value (int) -- Amount of hydration to add on the current value on the agent, can be negative.
+     """
+        self.hydration += value
+     
     def modify_toxicity(self, value):
+     """
+     Modifies the agent's toxicity level.
+
+     Args:
+        value (int) -- Amount of toxicity to add on the current value on the agent.
+     """
         self.toxicity += value
 
-    def modify_hydration(self, value):
-        self.hydration += value
-
-    def set_delta(self, delta):
-        self.delta = delta
+# Note that we could use a global method for modifying the agent's attributes [modify(0,1,0,5,0) for example] but for the sake of readability, I have opted for independent parts.

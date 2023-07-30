@@ -24,7 +24,9 @@ class Environment:
         self.current_food = []
         for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6,
                           food.food7, food.food8, food.food9, food.food10]:
+                              
                               # food.random is not yet added but exist inside the food.py
+                              
             if self.compare_attributes(food_item):
                 self.current_food.append(food_item)
                 

@@ -22,8 +22,9 @@ class Environment:
 
     def choose_food(self):
         self.current_food = []
-        for food_item in [food.apple, food.mushroom, food.blueberry, food.elderberry, food.potato, food.salmon,
-                          food.cactus, food.water, food.coconut_water, food.maple_syrup]:
+        for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6,
+                          food.food7, food.food8, food.food9, food.food10]:
+                              # food.random is not yet added but exist inside the food.py
             if self.compare_attributes(food_item):
                 self.current_food.append(food_item)
                 

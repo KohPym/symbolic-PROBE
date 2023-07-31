@@ -31,7 +31,7 @@ class TransitionMatrix:
         
     def normalize(self):
         """
-        Normalize the counting matrix to create a probability matrix.
+        Normalize the counting matrix to get a probability matrix.
 
         Returns:
             The probability matrix.

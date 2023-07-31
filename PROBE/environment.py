@@ -25,7 +25,7 @@ class Environment:
         (Meaning that we will not find any cactus in toundra ...)
 
         Args:
-            food_item (str) -- Food to compare with the biome..
+            food_item (str) -- Food to compare with the biome.
         """
         attributes_to_compare = ["humidity", "vegetation", "water"] # Can be modified but must be attributes shared between food and biome
         for attribute in attributes_to_compare:

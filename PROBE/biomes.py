@@ -4,7 +4,7 @@ import random
 # Attributes refers to the 'name', 'humidity', 'temperature', 'predation', 'vegetation', 'water', 'altitude' and 'oxygen'.
 # The random biome can be seen both as an independant biome and a prototype, giving the range of the attributes of all others biomes.
 
-random = {
+random_biome = {
     'name': 'Random Biome',
     'humidity': random.choice(['wet', 'moderate', 'dry']),
     'temperature': random.randint(-30, 50),

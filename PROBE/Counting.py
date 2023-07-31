@@ -1,12 +1,12 @@
 import numpy as np
 
-def counting_matrix(num_states=5, fill_value=0):
+def counting_matrix(num_states=4, fill_value=1):
     """
     Crée une matrice de comptage pour compter les transitions entre les états.
 
     Args:
-    - num_states : le nombre total d'états (par défaut 5)
-    - fill_value : la valeur avec laquelle remplir la matrice (par défaut 0)
+        num_states (int) -- Total number of states, default value is 4.
+        fill_value (int) -- Number to fill the matrix with, default value is 1. It increase virtually the initial impact of first transitions.
 
     Returns:
     - la matrice de comptage remplie de fill_value

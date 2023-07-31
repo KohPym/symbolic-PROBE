@@ -1,6 +1,6 @@
 import numpy as np
 
-class CountingMatrix:
+class TransitionMatrix:
     def __init__(self, num_states=4, fill_value=1):
         """
         Initialize a counting matrix with the given number of states and fill value.
@@ -28,3 +28,13 @@ class CountingMatrix:
         to_state = self.state_dict[to_state_name]
         self.count_mat[from_state][to_state] += 1
         return self.count_mat
+        
+    def normalize(self):
+        """
+        Normalize the counting matrix to create a probability matrix.
+
+        Returns:
+            The probability matrix.
+        """
+        prob_mat = self.count_mat.astype(float) / np.sum(self.count_mat, axis=1, keepdims=True)
+        return prob_mat

@@ -4,7 +4,7 @@ import random
 # Attributes refers to the 'name', 'type', 'satiety', 'vitamins', 'hydration', 'toxicity', 'humidity', 'vegetation', 'water' and 'altitude'.
 # The random food can be seen both as an independant food and a prototype, giving the range of the attributes of all others foods.
 
-random = {
+random_food = {
     'name': 'Random Food',
     'type': random.choice(['liquid', 'food']),
     'satiety': random.randint(0,10),

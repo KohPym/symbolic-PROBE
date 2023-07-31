@@ -8,7 +8,7 @@ from .. import biomes
 
 import random
 
-class AnteReliabilityFlee:
+class AnteReliability_Flee:
     def __init__(self, tau=0.1, mu=0.05, time=100):
         self.tau = tau
         self.mu = mu

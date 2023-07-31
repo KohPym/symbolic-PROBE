@@ -1,6 +1,6 @@
 import numpy as np
 
-def create_counting_matrix(num_states=4, fill_value=1):
+def create(num_states=4, fill_value=1):
     """
     Create a counting matrix in order to have a well designed transition matrix to evaluate the perceived volatility of each task sets.
 
@@ -17,18 +17,18 @@ def create_counting_matrix(num_states=4, fill_value=1):
     return count_mat, state_dict
 
 
-def update_counting_matrix(count_mat, state_dict, from_state_name, to_state_name):
+def update(count_mat, state_dict, from_state_name, to_state_name):
     """
-    Met à jour la matrice de comptage en fonction d'une transition entre deux états.
+    Update the transition matrix to apply the change/transition between states.
     
     Args:
-    - count_mat : la matrice de comptage
-    - state_dict : le dictionnaire de correspondance entre les noms d'états et leurs indices
-    - from_state_name : le nom de l'état de départ
-    - to_state_name : le nom de l'état d'arrivée
+        count_mat (matrix) -- Counting matrix to update
+        state_dict (dict) -- The corresponding dictionnary between states and their index
+        from_state_name (str) -- Name of the starting state
+        to_state_name (str) -- Name of the ending state
     
     Returns:
-    - la matrice de comptage mise à jour
+        The updated counting matrix
     """
     # Récupérer les indices correspondant aux noms d'états
     from_state = state_dict[from_state_name]

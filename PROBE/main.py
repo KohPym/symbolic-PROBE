@@ -1,6 +1,7 @@
 from environment import Environment
 from agent import Agent
 
+for t in 0:
 
 # Create the environment and agent
 survival_env = Environment()

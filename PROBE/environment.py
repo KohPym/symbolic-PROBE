@@ -8,7 +8,7 @@ class Environment:
         Initialization of biomes and food variables (from food.py and biomes.py)
         """
         self.biomes = [biomes.biome1, biomes.biome2, biomes.biome3, biomes.biome4, biomes.biome5, biomes.biome6,
-                       biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.random]
+                       biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.random_biome]
         self.current_biome = None
         self.current_food = []
         self.predation_level = None

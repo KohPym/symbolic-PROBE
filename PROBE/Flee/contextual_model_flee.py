@@ -4,12 +4,12 @@ from .. import biomes
 # tau est obtenu (arg from transition matrix)
 # mu a posteriori (arg from different predictive models)
 # t-1 est l'unité de temps (arg from main file, int)
-# Z normalise 
+# Z normalise
 
 import random
 
 class AnteReliability_Flee:
-    def __init__(self, tau=1, mu=0.05, time=100):
+    def __init__(self, tau=1, mu=1, time=1):
         self.tau = tau
         self.mu = mu
         self.time = time

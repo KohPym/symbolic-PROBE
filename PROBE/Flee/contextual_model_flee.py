@@ -1,6 +1,36 @@
 from typing import List
 from .. import biomes
 
+# tau est obtenu (arg from transition matrix)
+# mu a posteriori (arg from different predictive models)
+# t-1 est l'unité de temps (arg from main file, int)
+# Z normalise 
+
+import random
+
+class AnteReliabilityFlee:
+    def __init__(self, tau=0.1, mu=0.05, time=100):
+        self.tau = tau
+        self.mu = mu
+        self.time = time
+        
+    def run_simulation(self):
+        reliability = 1.0
+        time_elapsed = 0
+        
+        while time_elapsed < self.time:
+            # On simule une défaillance avec une probabilité mu
+            if random.random() < self.mu:
+                reliability *= 0.5
+            
+            # On simule une réparation avec une probabilité tau
+            if random.random() < self.tau:
+                reliability = min(1.0, reliability * 2.0)
+            
+            time_elapsed += 1
+        
+        return reliability
+
 class ContextualModelFlee:
     def __init__(self):
         self.tau = None

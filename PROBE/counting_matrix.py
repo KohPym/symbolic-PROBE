@@ -1,39 +1,33 @@
 import numpy as np
 
-def create(num_states=4, fill_value=1):
-    """
-    Create a counting matrix in order to have a well designed transition matrix to evaluate the perceived volatility of each task sets.
+class CountingMatrix:
+    def __init__(self, num_states=4, fill_value=1):
+        """
+        Initialize a counting matrix with the given number of states and fill value.
 
-    Args:
-        num_states (int) -- Total number of states, default value is 4.
-        fill_value (int) -- Number to fill the matrix with, default value is 1. It increase virtually the initial impact of first transitions.
+        Args:
+            num_states (int): Total number of states, default value is 4.
+            fill_value (int): Number to fill the matrix with, default value is 1. It increases virtually the initial impact of first transitions.
+        """
+        self.count_mat = np.full((num_states, num_states), fill_value, dtype=int)
+        self.state_names = ["Consume", "Flee", "Rest", "Stock", "Random"]
+        self.state_dict = {name: i for i, name in enumerate(self.state_names)}
 
-    Returns:
-        The counting matrix used to etablished the transition matrix.
-    """
-    count_mat = np.full((num_states, num_states), fill_value, dtype=int)
-    state_names = ["Consume", "Flee", "Rest", "Stock", "Random"]
-    state_dict = {name: i for i, name in enumerate(state_names)}
-    return count_mat, state_dict
+    def update(self, from_state_name, to_state_name):
+        """
+        Update the counting matrix to apply the change/transition between states.
 
+        Args:
+            from_state_name (str): Name of the starting state.
+            to_state_name (str): Name of the ending state.
 
-def update(count_mat, state_dict, from_state_name, to_state_name):
-    """
-    Update the transition matrix to apply the change/transition between states.
-    
-    Args:
-        count_mat (matrix) -- Counting matrix to update
-        state_dict (dict) -- The corresponding dictionnary between states and their index
-        from_state_name (str) -- Name of the starting state
-        to_state_name (str) -- Name of the ending state
-    
-    Returns:
-        The updated counting matrix
-    """
-    from_state = state_dict[from_state_name]
-    to_state = state_dict[to_state_name]
-    count_mat[from_state][to_state] += 1
-    return count_mat
+        Returns:
+            The updated counting matrix.
+        """
+        from_state = self.state_dict[from_state_name]
+        to_state = self.state_dict[to_state_name]
+        self.count_mat[from_state][to_state] += 1
+        return self.count_mat
 
 
 

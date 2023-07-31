@@ -30,13 +30,9 @@ def update(count_mat, state_dict, from_state_name, to_state_name):
     Returns:
         The updated counting matrix
     """
-    # Récupérer les indices correspondant aux noms d'états
     from_state = state_dict[from_state_name]
     to_state = state_dict[to_state_name]
-
-    # Incrémenter l'élément de la matrice de comptage correspondant à la transition
     count_mat[from_state][to_state] += 1
-
     return count_mat
 
 

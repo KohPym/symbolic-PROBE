@@ -5,7 +5,7 @@ import biomes
 class Environment:
     def __init__(self):
         """
-        Initialization of biomes and food variables (from food.py and biomes.py)
+        Initialization of biomes and food variables (from food.py and biomes.py).
         """
         self.biomes = [biomes.biome1, biomes.biome2, biomes.biome3, biomes.biome4, biomes.biome5, biomes.biome6,
                        biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.random_biome]
@@ -26,6 +26,9 @@ class Environment:
 
         Args:
             food_item (str) -- Food to compare with the biome.
+
+        Returns:
+            A boolean to show if the food could be retrieved in such biome.
         """
         attributes_to_compare = ["humidity", "vegetation", "water"] # Can be modified but must be attributes shared between food and biome
         for attribute in attributes_to_compare:
@@ -66,6 +69,9 @@ class Environment:
     def summary_matrix(self):
         """
         Matrix summarizing the whole level of satiety, hydration, vitamins, toxicity and quantity of the current environment. This will help to see clearly the evolution of the environment.
+
+        Returns:
+            The summarized matrix.
         """
         matrix = []
         headers = ["Satiety", "Hydration", "Vitamins", "Toxicity", "Quantity"]

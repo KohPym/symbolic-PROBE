@@ -1,23 +1,19 @@
 import numpy as np
 
-def counting_matrix(num_states=4, fill_value=1):
+def create_counting_matrix(num_states=4, fill_value=1):
     """
-    Crée une matrice de comptage pour compter les transitions entre les états.
+    Create a counting matrix in order to have a well designed transition matrix to evaluate the perceived volatility of each task sets.
 
     Args:
         num_states (int) -- Total number of states, default value is 4.
         fill_value (int) -- Number to fill the matrix with, default value is 1. It increase virtually the initial impact of first transitions.
 
     Returns:
-    - la matrice de comptage remplie de fill_value
+        The counting matrix used to etablished the transition matrix.
     """
-    # Initialiser la matrice de comptage avec des zéros ou avec fill_value si spécifié
     count_mat = np.full((num_states, num_states), fill_value, dtype=int)
-
-    # Créer un dictionnaire pour faire la correspondance entre les noms d'états et leurs indices
     state_names = ["Consume", "Flee", "Rest", "Stock", "Random"]
     state_dict = {name: i for i, name in enumerate(state_names)}
-
     return count_mat, state_dict
 
 

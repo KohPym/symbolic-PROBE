@@ -10,7 +10,7 @@ class CountingMatrix:
             fill_value (int): Number to fill the matrix with, default value is 1. It increases virtually the initial impact of first transitions.
         """
         self.count_mat = np.full((num_states, num_states), fill_value, dtype=int)
-        self.state_names = ["Consume", "Flee", "Rest", "Stock", "Random"]
+        self.state_names = ["Consume", "Flee", "Random", "Rest", "NOT_USED_Stock"]
         self.state_dict = {name: i for i, name in enumerate(self.state_names)}
 
     def update(self, from_state_name, to_state_name):

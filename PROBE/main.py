@@ -12,6 +12,14 @@ survival_env.choose_predation() # random choice of predation level between 0 and
 survival_env.multiply_food() # computation of all levels of attributes given food and quantity
 survival_env.summary_matrix() # creation of the summary stat matrix
 
+bob.update() # TODO at each time point
+bob.modify_delta()
+bob.modify_health()
+bob.modify_energy()
+bob.modify_satiety()
+bob.modify_hydration()
+bob.modify_toxicity()
+
 # Get the user's input for aversion to risk
 risk_aversion = float(input("Enter your aversion to risk (a number between 0 and 100): "))
 

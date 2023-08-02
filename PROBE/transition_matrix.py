@@ -6,8 +6,8 @@ class TransitionMatrix:
         Initialize a counting matrix with the given number of states and fill value.
 
         Args:
-            num_states (int): Total number of states, default value is 4.
-            fill_value (int): Number to fill the matrix with, default value is 1. It increases virtually the initial impact of first transitions.
+            num_states (int) -- Total number of states, default value is 4.
+            fill_value (int) -- Number to fill the matrix with, default value is 1. It increases virtually the initial impact of first transitions.
         """
         self.count_mat = np.full((num_states, num_states), fill_value, dtype=int)
         self.state_names = ["Consume", "Flee", "Random", "Rest", "NOT_USED_Stock"]
@@ -18,8 +18,8 @@ class TransitionMatrix:
         Update the counting matrix to apply the change/transition between states.
 
         Args:
-            from_state_name (str): Name of the starting state.
-            to_state_name (str): Name of the ending state.
+            from_state_name (str) -- Name of the starting state.
+            to_state_name (str) -- Name of the ending state.
 
         Returns:
             The updated counting matrix.

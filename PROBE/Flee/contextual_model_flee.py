@@ -1,6 +1,5 @@
 from typing import List
 from .. import biomes
-from .. import TransitionMatrix
 
 # tau est obtenu (arg from transition matrix)
 # mu a posteriori (arg from different predictive models)

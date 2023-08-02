@@ -6,6 +6,39 @@ from .. import biomes
 # t-1 est l'unité de temps (arg from main file, int)
 # Z normalise
 
+class AnteReliability_Flee:
+    def __init__(self, mu, tau, t):
+        self.mu = mu
+        self.tau = tau
+        self.t = t
+    
+    def contextual_mapping(self, x1, x2):
+        # On calcule le produit scalaire entre x1 et x2
+        dot_product = sum([x1[i] * x2[i] for i in range(len(x1))])
+        # On calcule la norme de x1 et x2
+        norm_1 = sum([x1[i] ** 2 for i in range(len(x1))]) ** 0.5
+        norm_2 = sum([x2[i] ** 2 for i in range(len(x2))]) ** 0.5
+        # On calcule le cosinus de l'angle entre x1 et x2
+        cos_angle = dot_product / (norm_1 * norm_2)
+        # On calcule le ContextualMapping
+        return (cos_angle + 1) / 2
+    
+    def ex_ante_reliability(self):
+        # On calcule la somme des produits entre les éléments de tau et de mu
+        product_sum = 1
+        for i in range(len(self.tau)):
+            product_sum *= self.tau[i] * self.mu[i]
+        
+        # On calcule le terme de normalisation
+        norm_term = 0
+        for i in range(len(self.tau)):
+            for j in range(len(self.mu)):
+                norm_term += self.contextual_mapping(self.tau[i], self.mu[j])
+        norm_term *= len(self.tau) * len(self.mu)
+        
+        # On calcule la ExAnteReliability
+        return product_sum * self.contextual_mapping(self.tau[self.t], self.mu[self.t]) / norm_term
+
 import random
 
 class AnteReliability_Flee:

@@ -55,3 +55,20 @@ print("Agent energy:", agent.energy)
 print("Agent toxicity:", agent.toxicity)
 print("Agent satiety:", agent.satiety)
 print("Agent hydration:", agent.hydration)
+
+from decoder import decode
+
+# Decode string to number
+result1 = decode("Consume")
+print(result1)  # Output: 1
+
+# Decode number to string
+result2 = decode(3)
+print(result2)  # Output: "Random"
+
+# Handle invalid input
+result3 = decode("Invalid string")
+print(result3)  # Output: "Invalid input: string not recognized"
+
+result4 = decode(6)
+print(result4)  # Output: "Invalid input: integer not recognized"

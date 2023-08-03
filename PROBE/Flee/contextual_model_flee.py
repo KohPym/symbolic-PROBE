@@ -27,7 +27,7 @@ class AnteReliability_Flee:
         # On calcule la somme des produits entre les éléments de tau et de mu
         product_sum = 1
         for i in range(len(self.tau)):
-            product_sum *= self.tau[i] * self.mu[i]
+            product_sum *= self.tau[i] * self.mu[i] #Un sum serait plus approprié (A CHANGER)
         
         # On calcule le terme de normalisation
         norm_term = 0

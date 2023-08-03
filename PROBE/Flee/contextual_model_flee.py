@@ -5,6 +5,8 @@ from .. import biomes
 # mu a posteriori (arg from different predictive models)
 # t-1 est l'unité de temps (arg from main file, int)
 # Z normalise
+# i = 2 (Flee)
+# j = indice sur lequel itérer
 
 class AnteReliability_Flee:
     def __init__(self, mu, tau, t):

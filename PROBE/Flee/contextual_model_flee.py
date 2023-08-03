@@ -14,7 +14,7 @@ class AnteReliability_Flee:
         self.tau = tau
         self.t = t
     
-    def contextual_mapping(self, x1, x2):
+    def contextual_mapping(self, context):
         # On calcule le produit scalaire entre x1 et x2
         dot_product = sum([x1[i] * x2[i] for i in range(len(x1))])
         # On calcule la norme de x1 et x2

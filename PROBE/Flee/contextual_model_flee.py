@@ -8,6 +8,14 @@ from .. import biomes
 # i = 2 (Flee)
 # j = indice sur lequel itérer
 
+def calculate_result(Energy, Satiety, Hydration, Toxicity, Risk_Aversion, Predation):
+    if Predation > 70 * Risk_Aversion:
+        return 70 * Risk_Aversion
+    elif Energy > 20 and Satiety > 5 and Hydration > 5 and Toxicity > 70:
+        return (Toxicity / 2) * Risk_Aversion
+    else:
+        return 0
+
 class AnteReliability_Flee:
     def __init__(self, mu, tau, t):
         self.mu = mu

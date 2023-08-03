@@ -62,7 +62,7 @@ food4 = {
     'satiety': 3,
     'vitamins': 2,
     'hydration': 6,
-    'toxicity': 3,
+    'toxicity': 2,
     'humidity': 'moderate',
     'vegetation': True,
     'water': True,
@@ -143,6 +143,6 @@ food10 = {
     'toxicity': 0,
     'humidity': 'wet',
     'vegetation': False,
-    'water': True,
+    'water': False,
     'altitude': random.randint(0,800)
 }

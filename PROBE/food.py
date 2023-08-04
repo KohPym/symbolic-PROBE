@@ -109,40 +109,40 @@ food7 = {
 }
 
 food8 = {
+    'name': 'Mushroom',
+    'type': 'food',
+    'satiety': 1,
+    'vitamins': 1,
+    'hydration': 0,
+    'toxicity': 8,
+    'humidity': 'wet',
+    'vegetation': True,
+    'water': True,
+    'altitude': random.randint(-2000, 1000),
+}
+
+food9 = {
+    'name': 'Salmon',
+    'type': 'food',
+    'satiety': 1,
+    'vitamins': 2,
+    'hydration': 9,
+    'toxicity': 0,
+    'humidity': 'moderate',
+    'vegetation': True,
+    'water': True,
+    'altitude': random.randint(-500, 1000),
+}
+
+food10 = {
     'name': 'Water',
     'type': 'liquid',
     'satiety': 0,
     'vitamins': 0,
     'hydration': 10,
     'toxicity': 0,
-    'humidity': 'wet',
+    'humidity': 'moderate',
     'vegetation': False,
     'water': True,
     'altitude': random.randint(-2000, 1000),
-}
-
-food9 = {
-    'name': 'Coconut Water',
-    'type': 'liquid',
-    'satiety': 1,
-    'vitamins': 2,
-    'hydration': 9,
-    'toxicity': 0,
-    'humidity': 'wet',
-    'vegetation': True,
-    'water': True,
-    'altitude': random.randint(0, 1000),
-}
-
-food10 = {
-    'name': 'Maple Syrup',
-    'type': 'liquid',
-    'satiety': 1,
-    'vitamins': 0,
-    'hydration': 5,
-    'toxicity': 0,
-    'humidity': 'wet',
-    'vegetation': False,
-    'water': False,
-    'altitude': random.randint(0,800)
 }

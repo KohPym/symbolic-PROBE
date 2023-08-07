@@ -1,6 +1,6 @@
 import numpy as np
 
-class observation_matrix:
+class ObservationMatrix:
     def __init__(self):
         self.matrix = np.zeros((10, 5))
 
@@ -21,3 +21,9 @@ class observation_matrix:
         if current_biome in biome_mapping:
             line = biome_mapping[current_biome]
             self.matrix[line] += values
+
+    def normalize_matrix(self):
+        norm_matrix = self.matrix
+        matrix_sum = np.sum(norm_matrix)
+        if matrix_sum != 0:
+            norm_matrix /= matrix_sum

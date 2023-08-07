@@ -51,9 +51,14 @@ class Environment:
                 
     def choose_predation(self):
         """
-        Initilization of the predation's level (percentage) to determine the dangerosity (animal) of the environment. Value between 0 and 100. 0 meaning no risk.
+        Initialization of the predation level (percentage) to determine the environment's animal danger level. Value between 0 and 100. 0 means no risk.
         """
-        self.predation_level = random.randint(0, 100)
+        predation_mapping = {
+            'low': random.randint(0, 30),
+            'medium': random.randint(30, 70),
+            'high': random.randint(70, 100)
+        }
+        self.predation_level = predation_mapping.get(self.current_biome.get('predation'))
 
     def multiply_food(self):
         """

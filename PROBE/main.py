@@ -3,6 +3,9 @@ from agent import Agent
 
 for t in 0:
 
+for _ in range(N):
+    env.choose_biome()
+
 # Create the environment and agent
 survival_env = Environment()
 bob = Agent(delta=2) # arg = 1,2 or 3 := difficulty

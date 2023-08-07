@@ -2,9 +2,9 @@ import numpy as np
 
 class ObservationMatrix:
     def __init__(self):
-        self.matrix = np.zeros((10, 5))
+        self.matrix = np.zeros((10, 6))
 
-    def update(self, current_biome, values):
+    def update(self, current_biome, values): #Pense à ajouter que 4 valeurs sur 6
         biome_mapping = {
             "Rainforest": 0,
             "Desert": 1,
@@ -27,3 +27,8 @@ class ObservationMatrix:
         matrix_sum = np.sum(norm_matrix)
         if matrix_sum != 0:
             norm_matrix /= matrix_sum
+
+
+    def normalize_matrix(self):
+        # Normalise les 4 premiers termes de chaque ligne de la matrice
+        self.matrix[:, :4] /= np.sum(self.matrix[:, :4], axis=1, keepdims=True)

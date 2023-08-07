@@ -20,7 +20,8 @@ class ObservationMatrix:
       
         if current_biome in biome_mapping:
             line = biome_mapping[current_biome]
-            self.matrix[line] += values
+            num_values = len(values)
+            self.matrix[line, :num_values] += values
 
     def normalize_matrix(self):
         norm_matrix = self.matrix

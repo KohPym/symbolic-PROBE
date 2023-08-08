@@ -1,8 +1,6 @@
 from environment import Environment
 from agent import Agent
 
-for t in 0:
-
 for _ in range(N):
     env.choose_biome()
 

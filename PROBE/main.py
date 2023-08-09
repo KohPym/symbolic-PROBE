@@ -1,9 +1,14 @@
 from environment import Environment
 from agent import Agent
 
-for _ in range(N):
+for _ in range(100):
     env = Environment()
     env.choose_biome()
+    env.choose_food()
+    env.multiply_food()
+    env.summary_matrix()
+    obs.update(decode_biome(env.current_biome['name']), env.summary_matrix()[-1])
+
 
 # Create the agent
 bob = Agent(delta=2) # arg = 1,2 or 3 := difficulty

@@ -23,20 +23,6 @@ def decode_task_set(arg):
 def decode_biome(arg):
     if isinstance(arg, str):
         biome_mapping = {
-            0: "Rainforest",
-            1: "Desert",
-            2: "Tundra",
-            3: "Plains",
-            4: "Savanna",
-            5: "Mangrove",
-            6: "Plains",
-            7: "Swamp",
-            8: "Taiga",
-            9: "Beach"
-        }
-        return biome_mapping.get(arg, "Invalid input: string not recognized")
-    elif isinstance(arg, int):
-        biome_mapping = {
             "Rainforest": 0,
             "Desert": 1,
             "Tundra": 2,
@@ -47,6 +33,20 @@ def decode_biome(arg):
             "Swamp": 7,
             "Taiga": 8,
             "Beach": 9
+        }
+        return biome_mapping.get(arg, "Invalid input: string not recognized")
+    elif isinstance(arg, int):
+        biome_mapping = {
+            0: "Rainforest",
+            1: "Desert",
+            2: "Tundra",
+            3: "Plains",
+            4: "Savanna",
+            5: "Mangrove",
+            6: "Plains",
+            7: "Swamp",
+            8: "Taiga",
+            9: "Beach"
         }
         return biome_mapping.get(arg, "Invalid input: integer not recognized")
     else:

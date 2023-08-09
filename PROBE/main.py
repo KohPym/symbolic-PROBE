@@ -2,10 +2,10 @@ from environment import Environment
 from agent import Agent
 
 for _ in range(N):
+    env = Environment()
     env.choose_biome()
 
-# Create the environment and agent
-survival_env = Environment()
+# Create the agent
 bob = Agent(delta=2) # arg = 1,2 or 3 := difficulty
 
 survival_env.choose_biome() # random choice of the biome

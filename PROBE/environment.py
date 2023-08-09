@@ -8,7 +8,7 @@ class Environment:
         Initialization of biomes and food variables (from food.py and biomes.py).
         """
         self.biomes = [biomes.biome1, biomes.biome2, biomes.biome3, biomes.biome4, biomes.biome5, biomes.biome6,
-                       biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10, biomes.random_biome]
+                       biomes.biome7, biomes.biome8, biomes.biome9, biomes.biome10]
         self.current_biome = None
         self.current_food = []
         self.predation_level = None
@@ -21,8 +21,8 @@ class Environment:
 
     def compare_attributes(self, food_item):
         """
-        Comparison between the attributes of the selected biome and the food available in order to match both of the generation.
-        (Meaning that we will not find any cactus in toundra ...)
+        Comparison between the attributes of the selected biome and the food available in order to match both of the
+        generation. (Meaning that we will not find any cactus in toundra ...)
 
         Args:
             food_item (str) -- Food to compare with the biome.
@@ -30,28 +30,35 @@ class Environment:
         Returns:
             A boolean to show if the food could be retrieved in such biome.
         """
-        attributes_to_compare = ["humidity", "vegetation", "water"] # Can be modified but must be attributes shared between food and biome
+        attributes_to_compare = ["humidity", "vegetation",
+                                 "water"]  # Can be modified but must be attributes shared between food and biome
         for attribute in attributes_to_compare:
-            if attribute in self.current_biome and attribute in food_item and self.current_biome[attribute] != food_item[attribute]:
+            if attribute in self.current_biome and attribute in food_item and self.current_biome[attribute] != \
+                    food_item[attribute]:
                 return False
         return True
 
     def choose_food(self):
         """
-        Choose food to build the environment based on all food existing in food.py and the matching attributes between the selected biomes and potential food.
+        Choose food to build the environment based on all food existing in food.py and the matching attributes
+        between the selected biomes and potential food.
         """
         self.current_food = []
         for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6,
-                          food.food7, food.food8, food.food9, food.food10]:                              
-                              # food.random is not yet added but exist inside the food.py file                             
+                          food.food7, food.food8, food.food9, food.food10]:
+            # food.random is not yet added but exist inside the food.py file
+            # food_item = food_item.copy()
             if self.compare_attributes(food_item):
                 self.current_food.append(food_item)
-        # Below a list comprehension of the previous loop, avoided to insure a better portability and readibility of the code.
-        # self.current_food = [food_item for food_item in [food.food1, food.food2, food.food3, food.food4, food.food5, food.food6, food.food7, food.food8, food.food9, food.food10] if self.compare_attributes(food_item)]
-                
+        # Below a list comprehension of the previous loop, avoided to insure a better portability and readability of
+        # the code. self.current_food = [food_item for food_item in [food.food1, food.food2, food.food3, food.food4,
+        # food.food5, food.food6, food.food7, food.food8, food.food9, food.food10] if self.compare_attributes(
+        # food_item)]
+
     def choose_predation(self):
         """
-        Initialization of the predation level (percentage) to determine the environment's animal danger level. Value between 0 and 100. 0 means no risk.
+        Initialization of the predation level (percentage) to determine the environment's animal danger level. Value
+        between 0 and 100. 0 means no risk.
         """
         predation_mapping = {
             'low': random.randint(0, 30),
@@ -62,10 +69,12 @@ class Environment:
 
     def multiply_food(self):
         """
-        Initilization food's quantity variables of the environment and thus, the level of satiety, hydration, toxicity and vitamins associated to the food (and the environment).
+        Initialization food's quantity variables of the environment and thus, the level of satiety, hydration,
+        toxicity and vitamins associated to the food (and the environment).
         """
         for food_item in self.current_food:
-            food_item['quantity'] = random.randint(1, 5)
+            food_item = food_item.copy()
+            food_item['quantity'] = food_item['quantity'] * random.randint(1, 5)
             food_item['satiety'] = food_item['satiety'] * food_item['quantity']
             food_item['hydration'] = food_item['hydration'] * food_item['quantity']
             food_item['toxicity'] = food_item['toxicity'] * food_item['quantity']
@@ -73,7 +82,8 @@ class Environment:
 
     def summary_matrix(self):
         """
-        Matrix summarizing the whole level of satiety, hydration, vitamins, toxicity and quantity of the current environment. This will help to see clearly the evolution of the environment.
+        Matrix summarizing the whole level of satiety, hydration, vitamins, toxicity and quantity of the current
+        environment. This will help to see clearly the evolution of the environment.
 
         Returns:
             The summarized matrix.

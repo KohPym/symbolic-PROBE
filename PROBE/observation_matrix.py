@@ -1,5 +1,10 @@
 import numpy as np
 
+# The observation matrix is a matrix showing what the agent could observe before the experiment.
+# Enssentially, this means what informations on the context the agent could gather.
+# In a non-computationnal world, it would basically means the memory and/or a priori that we have
+# on our world and biomes, up to our knowledge (e.g, a desert is not a good place to survive).
+
 class ObservationMatrix:
     def __init__(self):
         self.matrix = np.zeros((10, 6))

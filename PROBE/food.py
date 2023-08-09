@@ -20,9 +20,9 @@ random_food = {
 food1 = {
     'name': 'Apple',
     'type': 'food',
-    'satiety': 8,
-    'vitamins': 2,
-    'hydration': 5,
+    'satiety': 4,
+    'vitamins': 7,
+    'hydration': 2,
     'toxicity': 0,
     'humidity': 'moderate',
     'vegetation': True,
@@ -31,80 +31,80 @@ food1 = {
 }
 
 food2 = {
-    'name': 'Mushroom',
+    'name': 'Nut',
     'type': 'food',
-    'satiety': 5,
-    'vitamins': 2,
-    'hydration': 1,
-    'toxicity': 5,
-    'humidity': 'wet',
-    'vegetation': True,
-    'water': True,
-    'altitude': random.randint(-1000, 2000),
-}
-
-food3 = {
-    'name': 'Blueberry',
-    'type': 'food',
-    'satiety': 4,
-    'vitamins': 2,
-    'hydration': 6,
+    'satiety': 3,
+    'vitamins': 9,
+    'hydration': 0,
     'toxicity': 0,
     'humidity': 'moderate',
     'vegetation': True,
     'water': True,
-    'altitude': random.randint(0, 500),
+    'altitude': random.randint(0, 2000),
+}
+
+food3 = {
+    'name': 'Insect',
+    'type': 'food',
+    'satiety': 7,
+    'vitamins': 2,
+    'hydration': 0,
+    'toxicity': 0,
+    'humidity': 'moderate',
+    'vegetation': False,
+    'water': False,
+    'altitude': random.randint(0, 1000),
 }
 
 food4 = {
-    'name': 'Elderberry',
+    'name': 'Rice',
     'type': 'food',
-    'satiety': 3,
-    'vitamins': 2,
-    'hydration': 6,
-    'toxicity': 2,
-    'humidity': 'moderate',
+    'satiety': 9,
+    'vitamins': 1,
+    'hydration': 2,
+    'toxicity': 0,
+    'humidity': 'wet',
     'vegetation': True,
     'water': True,
     'altitude': random.randint(0, 500),
 }
 
 food5 = {
-    'name': 'Potato',
+    'name': 'Date',
     'type': 'food',
-    'satiety': 6,
+    'satiety': 3,
     'vitamins': 1,
-    'hydration': 3,
+    'hydration': 1,
     'toxicity': 0,
-    'humidity': 'moderate',
-    'vegetation': True,
-    'water': True,
+    'humidity': 'dry',
+    'vegetation': False,
+    'water': False,
     'altitude': random.randint(0, 300),
 }
 
 food6 = {
-    'name': 'Salmon',
+    'name': 'Sorghum',
     'type': 'food',
-    'satiety': 7,
-    'vitamins': 2,
-    'hydration': 2,
-    'toxicity': 0,
-    'humidity': 'wet',
-    'vegetation': False,
-    'water': True,
-    'altitude': random.randint(-1000, 300),
-}
-
-food7 = {
-    'name': 'Cactus',
-    'type': 'food',
-    'satiety': 3,
+    'satiety': 2,
     'vitamins': 1,
-    'hydration': 10,
-    'toxicity': 1,
+    'hydration': 0,
+    'toxicity': 0,
     'humidity': 'dry',
     'vegetation': False,
     'water': False,
+    'altitude': random.randint(0, 500),
+}
+
+food7 = {
+    'name': 'Elderberry',
+    'type': 'food',
+    'satiety': 1,
+    'vitamins': 1,
+    'hydration': 1,
+    'toxicity': 8,
+    'humidity': 'wet',
+    'vegetation': True,
+    'water': True,
     'altitude': random.randint(0, 300),
 }
 
@@ -124,9 +124,9 @@ food8 = {
 food9 = {
     'name': 'Salmon',
     'type': 'food',
-    'satiety': 1,
+    'satiety': 2,
     'vitamins': 2,
-    'hydration': 9,
+    'hydration': 8,
     'toxicity': 0,
     'humidity': 'moderate',
     'vegetation': True,

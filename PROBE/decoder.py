@@ -29,7 +29,7 @@ def decode_biome(arg):
             "Plains": 3,
             "Savanna": 4,
             "Mangrove": 5,
-            "Plains": 6,
+            "Mountains": 6,
             "Swamp": 7,
             "Taiga": 8,
             "Beach": 9
@@ -43,7 +43,7 @@ def decode_biome(arg):
             3: "Plains",
             4: "Savanna",
             5: "Mangrove",
-            6: "Plains",
+            6: "Mountains",
             7: "Swamp",
             8: "Taiga",
             9: "Beach"

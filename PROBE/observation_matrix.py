@@ -16,8 +16,8 @@ class ObservationMatrix:
         self.matrix[current_biome, 5] += 1
 
     def normalize_matrix(self):
-        self.norm_matrix = self.matrix
-        row_sums = np.sum(self.matrix[:, :4], axis=1, keepdims=True)
+        self.norm_matrix = copy.copy(self.matrix)
+        row_sums = np.sum(self.norm_matrix[:, :4], axis=1, keepdims=True)
         for i in range(row_sums.shape[0]):
             if row_sums[i] != 0:
                 self.norm_matrix[i, :4] = np.round(self.norm_matrix[i, :4] / row_sums[i], 2)

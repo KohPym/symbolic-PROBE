@@ -1,0 +1,179 @@
+Rainforest:
+  type: Biome
+  attrs:
+    hasVagetation: dense
+    hasTemperature: neutralTemperature
+    hasWetness: wet
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,5)
+      - effect(health,-1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Desert:
+  type: Biome
+  attrs:
+    hasVagetation: few
+    hasTemperature: warm
+    hasWetness: dry
+    hasPredation: low
+  consequences:
+    Rest:
+      - effect(energy,2)
+      - effect(health,0)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,-1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Tundra:
+  type: Biome
+  attrs:
+    hasVagetation: few
+    hasTemperature: cold
+    hasWetness: dry
+    hasPredation: medium
+  consequences:
+    Rest:
+      - effect(energy,4)
+      - effect(health,0)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Plains:
+  type: Biome
+  attrs:
+    hasVagetation: neutral
+    hasTemperature: neutralTemperature
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,6)
+      - effect(health,2)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Savanna:
+  type: Biome
+  attrs:
+    hasVagetation: neutral
+    hasTemperature: neutralTemperature
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,5)
+      - effect(health,0)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Mangrove:
+  type: Biome
+  attrs:
+    hasVagetation: dense
+    hasTemperature: neutralTemperature
+    hasWetness: wet
+    hasPredation: medium
+  consequences:
+    Rest:
+      - effect(energy,7)
+      - effect(health,1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,0)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Mountains:
+  type: Biome
+  attrs:
+    hasVagetation: neutral
+    hasTemperature: cold
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,1)
+      - effect(health,-1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Swamp:
+  type: Biome
+  attrs:
+    hasVagetation: dense
+    hasTemperature: neutralTemperature
+    hasWetness: wet
+    hasPredation: medium
+  consequences:
+    Rest:
+      - effect(energy,5)
+      - effect(health,1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,0)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Taiga:
+  type: Biome
+  attrs:
+    hasVagetation: neutral
+    hasTemperature: cold
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,3)
+      - effect(health,-1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Beach:
+  type: Biome
+  attrs:
+    hasVagetation: few
+    hasTemperature: neutralTemperature
+    hasWetness: neutralWetness
+    hasPredation: low
+  consequences:
+    Rest:
+      - effect(energy,8)
+      - effect(health,1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,-1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)

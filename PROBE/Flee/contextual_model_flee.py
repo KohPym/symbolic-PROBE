@@ -31,8 +31,8 @@ class AnteReliability_Flee:
         self.contextual_list = np.append(self.contextual_list, contextual_mapping)
         return self.contextual_mapping
 
-    def update(self, contextual_mapping, tau, mu):
-        lambda_flee = contextual mapping * np.multiply([tau, mu])
+    def update_lambda(self, lambda_flee, biome, tau, mu):
+        lambda_flee[biome] = self.contextual_mapping[biome] * np.multiply([tau, mu]) # NORMALISE
         return lambda_flee
 
 

@@ -12,10 +12,10 @@ class AnteReliability:
         self.ContextualMapping_Rest = ContextualMapping_Rest
 
         # Création des matrices de 1 colonne et 10 lignes
-        self.matrix_consume = np.zeros((10, self.duration))
-        self.matrix_flee = np.zeros((10, self.duration))
-        self.matrix_random = np.zeros((10, self.duration))
-        self.matrix_rest = np.zeros((10, self.duration))
+        self.matrix_consume = np.ones((10, self.duration))
+        self.matrix_flee = np.ones((10, self.duration))
+        self.matrix_random = np.ones((10, self.duration))
+        self.matrix_rest = np.ones((10, self.duration))
 
         # Initialisation des termes dans chaque matrice
         for i in range(10):

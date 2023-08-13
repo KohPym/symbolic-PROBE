@@ -27,8 +27,8 @@ class AnteReliability_Flee:
         self.t = t
 
     def update(self, contextual_mapping, tau, mu):
-        result = contextual_mapping * (sum(tau[:4] * mu[:4]))
-        return result
+        lambda_flee = contextual mapping * np.multiply([tau, mu])
+        return lambda_flee
 
 def calculate_result(Energy, Satiety, Hydration, Toxicity, Risk_Aversion, Predation):
     if Predation > 70 * Risk_Aversion:

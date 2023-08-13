@@ -19,16 +19,23 @@ predation # from observation_matrix
 decoder.decode_biome(arg1) # From main loop
 
 class AnteReliability_Flee:
-    def __init__(self, contextual_mapping, tau, biome, mu, t):
-        self.contextual_mapping = contextual_mapping
-        self.tau = tau
-        self.biome = biome
-        self.mu = mu
-        self.t = t
+    def __init__(self, observation):
+        # Initially, the AnteReliability_Flee is equal to the contextual mapping due to the design of our experiment.
+        # Others parameters are intially equal to 0 and we have an observation of our environment which serve as contextual_mapping.
+        # We then apply a decision structure to introduce the interoception mechanism.
+        self.observation = observation # Somme et moeynne pour conso etc
+        self.contextual_mapping = self.observation
+        
+    def update_contextual(self, biome, mu, learning_rate): # Update du contexte F
+        self.contextual_mapping[biome] = learning_rate * mu + (1 - learning_rate) * self.contextual_mapping[biome]
+        self.contextual_list = np.append(self.contextual_list, contextual_mapping)
+        return self.contextual_mapping
 
     def update(self, contextual_mapping, tau, mu):
         lambda_flee = contextual mapping * np.multiply([tau, mu])
         return lambda_flee
+
+
 
 def calculate_result(Energy, Satiety, Hydration, Toxicity, Risk_Aversion, Predation):
     if Predation > 70 * Risk_Aversion:

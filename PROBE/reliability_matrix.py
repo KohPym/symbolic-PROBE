@@ -47,6 +47,36 @@ class AnteReliability:
             self.matrix_rest[i][t] = self.n_matrix[3]
 
 
+class PostReliability:
+    def __init__(self, duration):
+        self.n_matrix = None
+        self.duration = duration
+
+        # Création des matrices de 1 colonne et 10 lignes
+        self.matrix_consume = np.ones((10, self.duration))
+        self.matrix_flee = np.ones((10, self.duration))
+        self.matrix_random = np.ones((10, self.duration))
+        self.matrix_rest = np.ones((10, self.duration))
+
+    def update(self, new_elements_consume, new_elements_flee, new_elements_random, new_elements_rest, t):
+        # Vérification de la taille des nouvelles listes d'éléments
+        if len(new_elements_consume) != 10 or len(new_elements_flee) != 10 or len(new_elements_random) != 10 or len(
+                new_elements_rest) != 10:
+            print("Erreur : Les listes d'éléments doivent avoir une taille de 10.")
+            return
+
+        # Ajout des nouveaux éléments dans chaque matrice
+        for i in range(10):
+            self.n_matrix = np.array(
+                [new_elements_consume[i], new_elements_flee[i], new_elements_random[i],
+                 new_elements_rest[i]])
+            self.n_matrix = self.n_matrix / np.sum(self.n_matrix)
+            self.matrix_consume[i][t] = self.n_matrix[0]
+            self.matrix_flee[i][t] = self.n_matrix[1]
+            self.matrix_random[i][t] = self.n_matrix[2]
+            self.matrix_rest[i][t] = self.n_matrix[3]
+
+
 ante_reliability = AnteReliability([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
                                    [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
                                    [21, 22, 23, 24, 25, 26, 27, 28, 29, 30],

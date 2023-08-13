@@ -8,6 +8,17 @@ from .. import biomes
 # i = 2 (Flee)
 # j = indice sur lequel itérer
 
+
+
+energy # from observation_matrix
+satiety # from observation_matrix
+hydration # from observation_matrix
+toxicity # from observation_matrix
+risk_aversion # from main loop
+predation # from observation_matrix
+decoder.decode_biome(arg1) # From main loop
+
+
 def calculate_result(Energy, Satiety, Hydration, Toxicity, Risk_Aversion, Predation):
     if Predation > 70 * Risk_Aversion:
         return 70 * Risk_Aversion

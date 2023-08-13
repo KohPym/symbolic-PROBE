@@ -27,7 +27,7 @@ def calculate_result(Energy, Satiety, Hydration, Toxicity, Risk_Aversion, Predat
     else:
         return 0
 
-class AnteReliability_Flee:
+class ContextualMapping_Flee:
     def __init__(self, mu, tau, t):
         self.mu = mu
         self.tau = tau

@@ -13,7 +13,7 @@
       SubClassOf: Organism
   - Fauna:
       SubClassOf: Organism
-	  
+
 - multiple_owl_classes:
   - Cereal:
       SubClassOf: Flora

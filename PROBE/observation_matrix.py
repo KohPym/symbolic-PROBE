@@ -22,3 +22,10 @@ class ObservationMatrix:
             if row_sums[i] != 0:
                 self.norm_matrix[i, :4] = np.round(self.norm_matrix[i, :4] / row_sums[i], 2)
 
+obs = ObservationMatrix()
+obs.update(decode_biome('Rainforest'),[0,1,2,3,4])
+obs.update(decode_biome('Rainforest'),[18,1,2,3,4])
+obs.update(0,[0,1,2,3,4])
+obs.matrix
+obs.norm_matrix
+obs.normalize_matrix()

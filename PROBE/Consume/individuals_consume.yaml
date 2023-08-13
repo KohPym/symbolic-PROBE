@@ -1,0 +1,329 @@
+Apple:
+  type: Fruit
+  attrs:
+    hasColor:  red
+    hasTemperature: neutralTemperature
+    hasTexture: smooth
+    hasPressure: light
+    hasWetness: wet
+    hasTaste: sweet
+    hasSmell: neutralSmell
+    hasShape: sphere
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,4)
+      - effect(energy,7)
+      - effect(hydration,2)
+      - effect(toxicity,0)
+      - effect(health,1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
+
+Nut:
+  type: Fruit
+  attrs:
+    hasColor: brown
+    hasTemperature: neutralTemperature
+    hasTexture: rough
+    hasPressure: light
+    hasWetness: wet
+    hasTaste: sweet
+    hasSmell: odorless
+    hasShape: sphere
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,3)
+      - effect(energy,9)
+      - effect(hydration,0)
+      - effect(toxicity,0)
+      - effect(health,1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
+
+Insect:
+  type: Fauna
+  attrs:
+    hasColor: brown
+    hasTemperature: warm
+    hasTexture: rough
+    hasPressure: light
+    hasWetness: wet
+    hasTaste: sweet
+    hasSmell: goodSmell
+    hasShape: complexShape
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,7)
+      - effect(energy,2)
+      - effect(hydration,0)
+      - effect(toxicity,0)
+      - effect(health,1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
+
+Rice:
+  type: Cereal
+  attrs:
+    hasColor: white
+    hasTemperature: warm
+    hasTexture: smooth
+    hasPressure: light
+    hasWetness: wet
+    hasTaste: umami
+    hasSmell: neutralSmell
+    hasShape: cylinder
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,9)
+      - effect(energy,1)
+      - effect(hydration,2)
+      - effect(toxicity,0)
+      - effect(health,1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
+
+Date:
+  type: Fruit
+  attrs:
+    hasColor: brown
+    hasTemperature: neutralTemperature
+    hasTexture: soft
+    hasPressure: light
+    hasWetness: neutralWetness
+    hasTaste: sweet
+    hasSmell: neutralSmell
+    hasShape: complexShape
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,3)
+      - effect(energy,1)
+      - effect(hydration,1)
+      - effect(toxicity,0)
+      - effect(health,0)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
+
+Sorghum:
+  type: Cereal
+  attrs:
+    hasColor: brown
+    hasTemperature: neutralTemperature
+    hasTexture: rough
+    hasPressure: light
+    hasWetness: neutralWetness
+    hasTaste: sweet
+    hasSmell: neutralSmell
+    hasShape: sphere
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,2)
+      - effect(energy,1)
+      - effect(hydration,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
+
+ElderBerry:
+  type: Berry
+  attrs:
+    hasColor: black
+    hasTemperature: neutralTemperature
+    hasTexture: smooth
+    hasPressure: light
+    hasWetness: neutralWetness
+    hasTaste: sweet
+    hasSmell: badSmell
+    hasShape: sphere
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,1)
+      - effect(energy,1)
+      - effect(hydration,1)
+      - effect(toxicity,-8)
+      - effect(health,-1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,8)
+      - effect(health,1)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,1)
+
+Mushroom:
+  type: Fungus
+  attrs:
+    hasColor: white
+    hasTemperature: neutralTemperature
+    hasTexture: smooth
+    hasPressure: light
+    hasWetness: wet
+    hasTaste: sweet
+    hasSmell: badSmell
+    hasShape: complexShape
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,1)
+      - effect(energy,1)
+      - effect(hydration,0)
+      - effect(toxicity,-8)
+      - effect(health,-1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,8)
+      - effect(health,1)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,1)
+
+Salmon:
+  type: Fish
+  attrs:
+    hasColor: red
+    hasTemperature: neutralTemperature
+    hasTexture: rough
+    hasPressure: light
+    hasWetness: wet
+    hasTaste: sweet
+    hasSmell: odorless
+    hasShape: complexShape
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,2)
+      - effect(energy,2)
+      - effect(hydration,8)
+      - effect(toxicity,0)
+      - effect(health,1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
+
+Water:
+  type: Substance
+  attrs:
+    hasColor: blue
+    hasTemperature: neutralTemperature
+    hasTexture: soft
+    hasPressure: light
+    hasWetness: wet
+    hasTaste: sweet
+    hasSmell: odorless
+    hasShape: complexShape
+    hasSound: soundless
+    hasLight: noLight
+  consequences:
+    Consume:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,10)
+      - effect(toxicity,0)
+      - effect(health,1)
+    Flee : 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    DoNothing
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)

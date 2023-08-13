@@ -2,11 +2,11 @@
 
 def homeostasis(health, energy, satiety, hydration, toxicity):
     # Define the weights for each parameter
-    health_weight = 0.2
-    energy_weight = 0.3
+    health_weight = 0.35
+    energy_weight = 0.1
     satiety_weight = 0.2
     hydration_weight = 0.2
-    toxicity_weight = 0.1
+    toxicity_weight = 0.15
 
     # Calculate the homeostasis score
     homeostasis_score = (

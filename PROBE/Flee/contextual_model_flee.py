@@ -18,6 +18,17 @@ risk_aversion # from main loop
 predation # from observation_matrix
 decoder.decode_biome(arg1) # From main loop
 
+class AnteReliability_Flee:
+    def __init__(self, contextual_mapping, tau, biome, mu, t):
+        self.contextual_mapping = contextual_mapping
+        self.tau = tau
+        self.biome = biome
+        self.mu = mu
+        self.t = t
+
+    def update(self, contextual_mapping, tau, mu):
+        result = contextual_mapping * (sum(tau[:4] * mu[:4]))
+        return result
 
 def calculate_result(Energy, Satiety, Hydration, Toxicity, Risk_Aversion, Predation):
     if Predation > 70 * Risk_Aversion:

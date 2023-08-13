@@ -18,13 +18,13 @@ Apple:
       - effect(hydration,2)
       - effect(toxicity,0)
       - effect(health,1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -51,13 +51,13 @@ Nut:
       - effect(hydration,0)
       - effect(toxicity,0)
       - effect(health,1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -84,13 +84,13 @@ Insect:
       - effect(hydration,0)
       - effect(toxicity,0)
       - effect(health,1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -117,13 +117,13 @@ Rice:
       - effect(hydration,2)
       - effect(toxicity,0)
       - effect(health,1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -150,13 +150,13 @@ Date:
       - effect(hydration,1)
       - effect(toxicity,0)
       - effect(health,0)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -183,13 +183,13 @@ Sorghum:
       - effect(hydration,0)
       - effect(toxicity,0)
       - effect(health,0)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -216,13 +216,13 @@ ElderBerry:
       - effect(hydration,1)
       - effect(toxicity,-8)
       - effect(health,-1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,8)
       - effect(health,1)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -249,13 +249,13 @@ Mushroom:
       - effect(hydration,0)
       - effect(toxicity,-8)
       - effect(health,-1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,8)
       - effect(health,1)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -282,13 +282,13 @@ Salmon:
       - effect(hydration,8)
       - effect(toxicity,0)
       - effect(health,1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)
@@ -315,13 +315,13 @@ Water:
       - effect(hydration,10)
       - effect(toxicity,0)
       - effect(health,1)
-    Flee : 
+    Flee: 
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydratation,0)
       - effect(toxicity,0)
       - effect(health,0)
-    DoNothing
+    doNothing:
       - effect(satiety,0)
       - effect(energy,0)
       - effect(hydration,0)

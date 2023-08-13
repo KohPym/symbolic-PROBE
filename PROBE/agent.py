@@ -1,5 +1,24 @@
 # It's bob ! 
- 
+
+def homeostasis(health, energy, satiety, hydration, toxicity):
+    # Define the weights for each parameter
+    health_weight = 0.2
+    energy_weight = 0.3
+    satiety_weight = 0.2
+    hydration_weight = 0.2
+    toxicity_weight = 0.1
+
+    # Calculate the homeostasis score
+    homeostasis_score = (
+        health_weight * health +
+        energy_weight * energy +
+        satiety_weight * satiety +
+        hydration_weight * hydration +
+        toxicity_weight * (1 - toxicity)  # Invert toxicity value for better homeostasis
+    )
+
+    return homeostasis_score
+
 class Agent:
     def __init__(self, delta=2, health=50, energy=80, satiety=80, hydration=80, toxicity=0):
         """

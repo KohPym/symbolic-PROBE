@@ -1,0 +1,630 @@
+- owl_class:
+      Entity:
+          SubClassOf: "owl:Thing"
+
+- multiple_owl_classes:
+  - Organism:
+      SubClassOf: "Entity"
+  - Substance:
+      SubClassOf: "Entity"
+
+- multiple_owl_classes:
+  - Flora:
+      SubClassOf: Organism
+  - Fauna:
+      SubClassOf: Organism
+	  
+- multiple_owl_classes:
+  - Cereal:
+      SubClassOf: Flora
+  - Fruit:
+      SubClassOf: Flora
+  - Fugus:
+      SubClassOf: Flora
+  - Insect:
+      SubClassOf: Fauna
+  - Fish:
+      SubClassOf: Fauna
+
+- multiple_owl_classes:
+  - Sense:
+      SubClassOf: "owl:Thing"
+  - ExternalSense:
+      SubClassOf: Sense
+  - InternalSense:
+      SubClassOf: Sense
+
+- owl_class:
+      Distance:
+        SubClassOf: "owl:Thing"
+
+- owl_object_property:
+    hasThing:
+      Domain: Distance
+      Range: "owl:Thing"
+
+- owl_data_property:
+    hasDistanceValue:
+      Domain: Distance
+      Range: float
+      Characteristics:
+        - Functional
+
+- owl_data_property:
+    hasMaxDistance:
+      Domain: "owl:Thing"
+      Range: float
+      Characteristics:
+        - Functional
+
+- owl_inverse_property:
+    hasDistance:
+        Inverse: hasThing
+
+- multiple_owl_classes:
+  - TouchSense:
+      SubClassOf: ExternalSense
+  - Thermal:
+      SubClassOf: TouchSense
+  - Texture:
+      SubClassOf: TouchSense
+  - Pressure:
+      SubClassOf: TouchSense
+  - Wetness:
+      SubClassOf: TouchSense
+
+
+- owl_multiple_individuals:
+      names:
+          - hot
+          - warm
+          - neutralTemperature
+          - cool
+          - cold
+      types:
+          - Thermal
+
+- owl_multiple_individuals:
+    names:
+        - distance(hot,warm,1)
+        - distance(hot,neutralTemperature,2)
+        - distance(hot,cool,3)
+        - distance(hot,cold,4)
+
+        - distance(warm,neutralTemperature,1)
+        - distance(warm,cool,2)
+        - distance(warm,cold,3)
+
+        - distance(neutralTemperature,cool,1)
+        - distance(neutralTemperature,cold,2)
+
+        - distance(cool,cold,1)
+    types:
+        - Distance
+
+- owl_object_property:
+    hasTemperature:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Thermal
+
+- owl_multiple_individuals:
+      names:
+          - soft
+          - furry
+          - fuzzy
+          - scratchy
+          - rough
+          - sticky
+          - smooth
+          - waxy
+          - spiky
+      types:
+          - Texture
+
+- owl_multiple_individuals:
+    names:
+      - distance(soft,furry,2)
+      - distance(soft,fuzzy,2)
+      - distance(soft,scratchy,3)
+      - distance(soft,rough,3)
+      - distance(soft,sticky,3)
+      - distance(soft,smooth,1)
+      - distance(soft,waxy,2)
+      - distance(soft,spiky,4)
+
+      - distance(furry,fuzzy,1)
+      - distance(furry,scratchy,4)
+      - distance(furry,rough,2)
+      - distance(furry,sticky,3)
+      - distance(furry,smooth,2)
+      - distance(furry,waxy,3)
+      - distance(furry,spiky,4)
+
+      - distance(fuzzy,scratchy,4)
+      - distance(fuzzy,rough,2)
+      - distance(fuzzy,sticky,3)
+      - distance(fuzzy,smooth,3)
+      - distance(fuzzy,waxy,3)
+      - distance(fuzzy,spiky,4)
+
+      - distance(scratchy,rough,1)
+      - distance(scratchy,sticky,2)
+      - distance(scratchy,smooth,4)
+      - distance(scratchy,waxy,4)
+      - distance(scratchy,spiky,3)
+
+      - distance(rough,sticky,1)
+      - distance(rough,smooth,4)
+      - distance(rough,waxy,4)
+      - distance(rough,spiky,1)
+
+      - distance(sticky,smooth,3)
+      - distance(sticky,waxy,3)
+      - distance(sticky,spiky,3)
+
+      - distance(smooth,waxy,2)
+      - distance(smooth,spiky,4)
+
+      - distance(waxy,spiky,3)
+    types:
+        - Distance
+
+- owl_object_property:
+    hasTexture:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Texture
+
+- owl_multiple_individuals:
+      names:
+          - heavy
+          - light
+          - neutralWeight
+      types:
+          - Pressure
+
+- owl_multiple_individuals:
+    names:
+      - distance(heavy,light,2)
+      - distance(heavy,neutralWeight,1)
+      - distance(light,neutralWeight,1)
+    types:
+      - Distance
+
+- owl_object_property:
+    hasPressure:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Pressure
+
+- owl_multiple_individuals:
+      names:
+          - dry
+          - neutralWetness
+          - wet
+      types:
+          - Wetness
+
+- owl_multiple_individuals:
+    names:
+      - distance(dry,neutralWetness,1)
+      - distance(dry,wet,2)
+      - distance(neutralWetness,wet,1)
+    types:
+      - Distance
+
+- owl_object_property:
+    hasWetness:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Wetness
+
+- owl_class:
+      VisionSense:
+          SubClassOf: ExternalSense
+
+- owl_class:
+      Color:
+          SubClassOf: VisionSense
+
+- owl_multiple_individuals:
+      names:
+        - red
+        - orange
+        - yellow
+        - green
+        - blue
+        - purple
+        - pink
+        - brown
+        - black
+        - white
+        - gray
+        - silver
+        - gold
+      types:
+          - Color
+
+- owl_multiple_individuals:
+      names:
+        - distance(red,orange,1)
+        - distance(red,yellow,2)
+        - distance(red,green,2)
+        - distance(red,blue,3)
+        - distance(red,purple,2)
+        - distance(red,pink,2)
+        - distance(red,brown,1)
+        - distance(red,black,2)
+        - distance(red,white,2)
+        - distance(red,gray,2)
+        - distance(red,silver,2)
+        - distance(red,gold,2)
+
+        - distance(orange,yellow,1)
+        - distance(orange,green,1)
+        - distance(orange,blue,4)
+        - distance(orange,purple,3)
+        - distance(orange,pink,1)
+        - distance(orange,brown,1)
+        - distance(orange,black,2)
+        - distance(orange,white,2)
+        - distance(orange,gray,1)
+        - distance(orange,silver,1)
+        - distance(orange,gold,1)
+
+        - distance(yellow,green,1)
+        - distance(yellow,blue,4)
+        - distance(yellow,purple,3)
+        - distance(yellow,pink,2)
+        - distance(yellow,brown,2)
+        - distance(yellow,black,2)
+        - distance(yellow,white,2)
+        - distance(yellow,gray,2)
+        - distance(yellow,silver,2)
+        - distance(yellow,gold,1)
+
+        - distance(green,blue,4)
+        - distance(green,purple,3)
+        - distance(green,pink,2)
+        - distance(green,brown,2)
+        - distance(green,black,2)
+        - distance(green,white,2)
+        - distance(green,gray,2)
+        - distance(green,silver,2)
+        - distance(green,gold,1)
+
+        - distance(blue,purple,1)
+        - distance(blue,pink,2)
+        - distance(blue,brown,2)
+        - distance(blue,black,2)
+        - distance(blue,white,3)
+        - distance(blue,gray,2)
+        - distance(blue,silver,2)
+        - distance(blue,gold,4)
+
+        - distance(purple,pink,2)
+        - distance(purple,brown,1)
+        - distance(purple,black,2)
+        - distance(purple,white,2)
+        - distance(purple,gray,2)
+        - distance(purple,silver,2)
+        - distance(purple,gold,3)
+
+        - distance(pink,brown,1)
+        - distance(pink,black,2)
+        - distance(pink,white,1)
+        - distance(pink,gray,1)
+        - distance(pink,silver,1)
+        - distance(pink,gold,2)
+
+        - distance(brown,black,1)
+        - distance(brown,white,1)
+        - distance(brown,gray,1)
+        - distance(brown,silver,1)
+        - distance(brown,gold,2)
+
+        - distance(black,white,2)
+        - distance(black,gray,2)
+        - distance(black,silver,2)
+        - distance(black,gold,2)
+
+        - distance(white,gray,1)
+        - distance(white,silver,1)
+        - distance(white,gold,2)
+
+        - distance(gray,silver,1)
+        - distance(gray,gold,2)
+
+        - distance(silver,gold,2)
+      types:
+          - Distance
+
+- owl_object_property:
+    hasColor:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Color
+- owl_class:
+    Shape:
+      SubClassOf: VisionSense
+
+- owl_multiple_individuals:
+      names:
+        - cube
+        - sphere
+        - cylinder
+        - pyramid
+        - square
+        - circle
+        - triangle
+        - complexShape
+      types:
+          - Shape
+
+- owl_multiple_individuals:
+      names:
+        - distance(cube,sphere,3)
+        - distance(cube,cylinder,3)
+        - distance(cube,pyramid,2)
+        - distance(cube,square,2)
+        - distance(cube,circle,4)
+        - distance(cube,triangle,3)
+        - distance(cube,complexShape,4)
+
+        - distance(sphere,cylinder,2)
+        - distance(sphere,pyramid,3)
+        - distance(sphere,square,4)
+        - distance(sphere,circle,2)
+        - distance(sphere,triangle,4)
+        - distance(sphere,complexShape,4)
+
+        - distance(cylinder,pyramid,3)
+        - distance(cylinder,square,4)
+        - distance(cylinder,circle,2)
+        - distance(cylinder,triangle,4)
+        - distance(cylinder,complexShape,4)
+
+        - distance(pyramid,square,3)
+        - distance(pyramid,circle,4)
+        - distance(pyramid,triangle,2)
+        - distance(pyramid,complexShape,4)
+
+        - distance(square,circle,3)
+        - distance(square,triangle,2)
+        - distance(square,complexShape,4)
+
+        - distance(circle,triangle,3)
+        - distance(circle,complexShape,4)
+
+        - distance(triangle,complexShape,4)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasShape:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Shape
+
+- owl_class:
+    Lighting:
+      SubClassOf: VisionSense
+
+- owl_multiple_individuals:
+      names:
+        - noLight
+        - lighted
+      types:
+        - Lighting
+
+- owl_multiple_individuals:
+      names:
+        - distance(noLight,lighted,1)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasLight:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Lighting
+
+- owl_class:
+    HearingSense:
+      SubClassOf: ExternalSense
+
+- owl_multiple_individuals:
+      names:
+        - soundless
+        - quietSound
+        - loud
+        - painfulSound
+      types:
+          - HearingSense
+
+- owl_multiple_individuals:
+      names:
+        - distance(soundless,quietSound,1)
+        - distance(soundless,loud,2)
+        - distance(soundless,painfulSound,3)
+
+        - distance(quietSound,loud,1)
+        - distance(quietSound,painfulSound,2)
+
+        - distance(loud,painfulSound,1)
+      types:
+          - Distance
+
+- owl_object_property:
+    hasSound:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - HearingSense
+
+- owl_class:
+    SmellSense:
+      SubClassOf: ExternalSense
+
+- owl_multiple_individuals:
+      names:
+        - goodSmell
+        - neutralSmell
+        - odorless
+        - badSmell
+      types:
+        - SmellSense
+
+- owl_multiple_individuals:
+      names:
+        - distance(goodSmell,neutralSmell,1)
+        - distance(goodSmell,odorless,2)
+        - distance(goodSmell,badSmell,3)
+
+        - distance(neutralSmell,odorless,1)
+        - distance(neutralSmell,badSmell,2)
+
+        - distance(odorless,badSmell,2)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasSmell:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+
+        Range:
+            - SmellSense
+
+- owl_class:
+    TasteSense:
+      SubClassOf: ExternalSense
+
+- owl_multiple_individuals:
+      names:
+        - sweet
+        - sour
+        - salty
+        - bitter
+        - umami
+      types:
+        - TasteSense
+
+- owl_multiple_individuals:
+      names:
+        - distance(sweet,sour,2)
+        - distance(sweet,salty,3)
+        - distance(sweet,bitter,3)
+        - distance(sweet,umami,2)
+
+        - distance(sour,salty,2)
+        - distance(sour,bitter,3)
+        - distance(sour,umami,3)
+
+        - distance(salty,bitter,2)
+        - distance(salty,umami,2)
+
+        - distance(bitter,umami,3)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasTaste:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - TasteSense
+
+- owl_multiple_individuals:
+      names:
+          - energy
+          - health
+          - hydration
+          - toxicity
+          - satiety
+      types:
+          - InternalSense
+
+
+- multiple_owl_classes:
+  - Action:
+      SubClassOf: "owl:Thing"
+
+# Applied to Consume TASK SET
+
+- owl_multiple_individuals:
+      names:
+          - Consume
+          - Flee
+          - doNothing
+      types:
+          - Action
+
+- owl_class:
+      Effect:
+          SubClassOf: "owl:Thing"
+
+- owl_object_property:
+    gives:
+      Domain: Effect
+      Range: InternalSense
+      Characteristics:
+        - Functional
+
+- owl_data_property:
+    hasEffectValue:
+      Domain: Effect
+      Range: int
+      Characteristics:
+        - Functional
+
+- owl_class:
+      Consequence:
+          SubClassOf: "owl:Thing"
+
+- owl_object_property:
+    hasConsequenceAction:
+      Domain: Consequence
+      Range: Action
+      Characteristics:
+        - Functional
+
+- owl_object_property:
+    hasConsequenceEntity:
+      Domain: Consequence
+      Range: Entity
+      Characteristics:
+        - Functional
+
+- owl_object_property:
+    hasConsequenceEffect:
+      Domain: Consequence
+      Range: Effect

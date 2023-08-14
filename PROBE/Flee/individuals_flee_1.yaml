@@ -1,3 +1,183 @@
+Rainforest:
+  type: Biome
+  attrs:
+    hasVegetation: dense
+    hasTemperature: neutralTemperature
+    hasWetness: wet
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,5)
+      - effect(health,-1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Desert:
+  type: Biome
+  attrs:
+    hasVegetation: few
+    hasTemperature: warm
+    hasWetness: dry
+    hasPredation: low
+  consequences:
+    Rest:
+      - effect(energy,2)
+      - effect(health,0)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,-1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Tundra:
+  type: Biome
+  attrs:
+    hasVegetation: few
+    hasTemperature: cold
+    hasWetness: dry
+    hasPredation: medium
+  consequences:
+    Rest:
+      - effect(energy,4)
+      - effect(health,0)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Plains:
+  type: Biome
+  attrs:
+    hasVegetation: neutral
+    hasTemperature: neutralTemperature
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,6)
+      - effect(health,2)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Savanna:
+  type: Biome
+  attrs:
+    hasVegetation: neutral
+    hasTemperature: neutralTemperature
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,5)
+      - effect(health,0)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Mangrove:
+  type: Biome
+  attrs:
+    hasVegetation: dense
+    hasTemperature: neutralTemperature
+    hasWetness: wet
+    hasPredation: medium
+  consequences:
+    Rest:
+      - effect(energy,7)
+      - effect(health,1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,0)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Mountains:
+  type: Biome
+  attrs:
+    hasVegetation: neutral
+    hasTemperature: cold
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,1)
+      - effect(health,-1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Swamp:
+  type: Biome
+  attrs:
+    hasVegetation: dense
+    hasTemperature: neutralTemperature
+    hasWetness: wet
+    hasPredation: medium
+  consequences:
+    Rest:
+      - effect(energy,5)
+      - effect(health,1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,0)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Taiga:
+  type: Biome
+  attrs:
+    hasVegetation: neutral
+    hasTemperature: cold
+    hasWetness: neutralWetness
+    hasPredation: high
+  consequences:
+    Rest:
+      - effect(energy,3)
+      - effect(health,-1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
+Beach:
+  type: Biome
+  attrs:
+    hasVegetation: few
+    hasTemperature: neutralTemperature
+    hasWetness: neutralWetness
+    hasPredation: low
+  consequences:
+    Rest:
+      - effect(energy,8)
+      - effect(health,1)
+    Flee: 
+      - effect(energy,-1)
+      - effect(health,-1)
+    doNothing:
+      - effect(energy,0)
+      - effect(health,0)
+
 Apple:
   type: Fruit
   attrs:
@@ -12,8 +192,18 @@ Apple:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat,peelAndEat,cookAndEat:
-      - effect(energy,1)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
 
 Nut:
   type: Fruit
@@ -29,11 +219,18 @@ Nut:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat,cookAndEat:
-      - effect(health,-1)
-      - effect(energy,2)
-    peelAndEat:
-      - effect(energy,2)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
 
 Insect:
   type: Fauna
@@ -49,14 +246,18 @@ Insect:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat:
-      - effect(health,-1)
-      - effect(energy,1)
-    peelAndEat:
-      - effect(energy,1)
-    cookAndEat:
-      - effect(energy,1)
-      - effect(joy,2)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
 
 Rice:
   type: Cereal
@@ -72,11 +273,18 @@ Rice:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat,peelAndEat:
-      - effect(energy,1)
-      - effect(anger,1)
-    cookAndEat:
-      - effect(energy,2)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
 
 Date:
   type: Fruit
@@ -92,11 +300,18 @@ Date:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat:
-      - effect(energy,1)
-      - effect(anger,1)
-    peelAndEat,cookAndEat:
-      - effect(energy,1)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
 
 Sorghum:
   type: Cereal
@@ -112,9 +327,18 @@ Sorghum:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat,peelAndEat,cookAndEat:
-      - effect(energy,1)
-      - effect(joy,1)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
 
 ElderBerry:
   type: Berry
@@ -130,9 +354,18 @@ ElderBerry:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat,peelAndEat,cookAndEat:
-      - effect(health,-1)
-      - effect(fear,2)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,8)
+      - effect(health,1)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,1)
 
 Mushroom:
   type: Fungus
@@ -148,14 +381,18 @@ Mushroom:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat,peelAndEat:
-      - effect(energy,1)
-      - effect(joy,3)
-    cookAndEat:
-      - effect(energy,1)
-      - effect(joy,5)
-    collect:
-      - effect(joy,2)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,8)
+      - effect(health,1)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,1)
 
 Salmon:
   type: Fish
@@ -171,11 +408,18 @@ Salmon:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,cookAndEat,attackAndEat:
-      - effect(health,-1)
-      - effect(fear,1)
-    collect,peelAndEat:
-      - effect(joy,1)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)
 
 Water:
   type: Substance
@@ -191,7 +435,15 @@ Water:
     hasSound: soundless
     hasLight: noLight
   consequences:
-    eat,attackAndEat,peelAndEat,cookAndEat:
-      - effect(anger,1)
-    build,collect:
-      - effect(joy,1)
+    Flee: 
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydratation,0)
+      - effect(toxicity,0)
+      - effect(health,0)
+    doNothing:
+      - effect(satiety,0)
+      - effect(energy,0)
+      - effect(hydration,0)
+      - effet(toxicity,0)
+      - effect(health,0)

@@ -3,72 +3,32 @@
           SubClassOf: "owl:Thing"
 
 - owl_class:
-      Organism:
-          SubClassOf: Entity
+      Environment:
+          SubClassOf: "owl:Thing"
+
+- multiple_owl_classes:
+  - Organism:
+      SubClassOf: "Entity"
+  - Substance:
+      SubClassOf: "Entity"
 
 - multiple_owl_classes:
   - Flora:
       SubClassOf: Organism
-  - Fruit:
-      SubClassOf: Flora
-  - Cereal:
-      SubClassOf: Flora
-  - Tuber:
-      SubClassOf: Flora
-  - Nut:
-      SubClassOf: Fruit
-  - Berry:
-      SubClassOf: Fruit
-  - Plant:
-      SubClassOf: Flora
-  - FloweringPlant:
-      SubClassOf: Plant
-  - Fungus:
-      SubClassOf: Flora
+  - Fauna:
+      SubClassOf: Organism
 
 - multiple_owl_classes:
-  - NonOrganism:
-      SubClassOf: Entity
-  - Mineral:
-      SubClassOf: NonOrganism
-
-#- owl_multiple_individuals:
-#      names:
-#        - cactus
-#        - medicinalHerb
-#        - grass
-#      types:
-#          - Plant
-#
-#- owl_multiple_individuals:
-#      names:
-#          - rose
-#          - sunflower
-#      types:
-#          - FloweringPlant
-#
-#- owl_multiple_individuals:
-#      names:
-#          - apple
-#          - banana
-#          - citrus
-#          - rottenApple
-#      types:
-#          - Fruit
-#
-#- owl_multiple_individuals:
-#      names:
-#          - almond
-#          - peanut
-#      types:
-#          - Nut
-#
-#- owl_multiple_individuals:
-#      names:
-#          - truffle
-#          - deadCap
-#      types:
-#          - Fungus
+  - Cereal:
+      SubClassOf: Flora
+  - Fruit:
+      SubClassOf: Flora
+  - Fugus:
+      SubClassOf: Flora
+  - Insect:
+      SubClassOf: Fauna
+  - Fish:
+      SubClassOf: Fauna
 
 - multiple_owl_classes:
   - Sense:
@@ -150,13 +110,63 @@
     hasTemperature:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - Thermal
+
+- owl_multiple_individuals:
+      names:
+        - few
+  	  - neutral
+   	  - dense
+   
+      types:
+          - VisionSense
+
+- owl_multiple_individuals:
+    names:
+      - distance(few,dense,2)
+      - distance(few,neutral,1)
+      
+      - distance(neutral,dense,1)
+
+    types:
+        - Distance
+
+- owl_object_property:
+    hasVegetation:
+        Characteristics:
+            - Functional
+        Domain:
+            - Environment
+        Range:
+            - VisionSense
+
+- owl_multiple_individuals:
+      names:
+          - high
+          - medium
+          - low
+      types:
+          - VisionSense
+
+- owl_multiple_individuals:
+    names:
+      - distance(high,medium,2)
+      - distance(high,low,1)
+      - distance(low,medium,1)
+    types:
+      - Distance
+
+- owl_object_property:
+    hasPredation:
+        Characteristics:
+            - Functional
+        Domain:
+            - Environment
+        Range:
+            - VisionSense
 
 - owl_multiple_individuals:
       names:
@@ -224,19 +234,16 @@
     hasTexture:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - Texture
 
 - owl_multiple_individuals:
       names:
-          - heavy # Something that human can't lift
-          - light # Something that human can lift without effort
-          - neutralWeight # Something that human can lift with a moderate effort
+          - heavy
+          - light
+          - neutralWeight
       types:
           - Pressure
 
@@ -252,11 +259,8 @@
     hasPressure:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - Pressure
 
@@ -276,22 +280,12 @@
     types:
       - Distance
 
-#- property_facts:
-#    hasDistanceValue:
-#      Facts:
-#        - distance(dry,neutralWetness): 1
-#        - distance(dry,wet): 2
-#        - distance(neutralWetness,wet): 1
-
 - owl_object_property:
     hasWetness:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - Wetness
 
@@ -415,19 +409,14 @@
       types:
           - Distance
 
-
 - owl_object_property:
     hasColor:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - Color
-
 - owl_class:
     Shape:
       SubClassOf: VisionSense
@@ -488,11 +477,8 @@
     hasShape:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - Shape
 
@@ -517,11 +503,8 @@
     hasLight:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - Lighting
 
@@ -555,11 +538,8 @@
     hasSound:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - HearingSense
 
@@ -593,8 +573,6 @@
     hasSmell:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
 
@@ -637,119 +615,18 @@
     hasTaste:
         Characteristics:
             - Functional
-            #- InverseFunctional
-
         Domain:
             - Entity
-
         Range:
             - TasteSense
-
-#- property_facts:
-#      hasTemperature:
-#        Facts:
-#          - Flora: neutralTemperature
-#      hasTexture:
-#        Facts:
-#          - cactus: spiky
-#          - medicinalHerb: soft
-#          - grass: soft
-#          - rose: spiky
-#          - sunflower: soft
-#          - apple: smooth
-#          - banana: waxy
-#          - citrus: waxy
-#          - rottenApple: soft
-#          - Nut: rough
-#          - Fungus: soft
-#      hasPressure:
-#        Facts:
-#          - Flora: light
-#      hasWetness:
-#        Facts:
-#          - Plant: neutralWetness
-#          - apple: neutralWetness
-#          - banana: neutralWetness
-#          - citrus: neutralWetness
-#          - rottenApple: wet
-#          - Nut: dry
-#          - Fungus: neutralWetness
-#      hasColor:
-#        Facts:
-#          - cactus: green
-#          - medicinalHerb: green
-#          - grass: green
-#          - rose: red
-#          - sunflower: yellow
-#          - apple: green
-#          - banana: yellow
-#          - citrus: yellow
-#          - rottenApple: green
-#          - Nut: brown
-#          - truffle: black
-#          - deadCap: white
-#      hasShape:
-#        Facts:
-#          - Plant: complexShape
-#          - apple: sphere
-#          - banana: cylinder
-#          - citrus: sphere
-#          - rottenApple: sphere
-#          - Nut: sphere
-#          - Fungus: complexShape
-#      hasLight:
-#        Facts:
-#          - Flora: noLight
-#      hasSound:
-#        Facts:
-#          - Flora: soundless
-#      hasSmell:
-#        Facts:
-#          - cactus: neutralSmell
-#          - medicinalHerb: badSmell
-#          - grass: neutralSmell
-#          - rose: goodSmell
-#          - sunflower: neutralSmell
-#          - apple: neutralSmell
-#          - banana: neutralSmell
-#          - citrus: neutralSmell
-#          - rottenApple: badSmell
-#          - Nut: neutralSmell
-#          - truffle: goodSmell
-#          - deadCap: neutralSmell
-#      hasTaste:
-#        Facts:
-#          - cactus: sour
-#          - medicinalHerb: bitter
-#          - grass: bitter
-#          - rose: sweet
-#          - sunflower: bitter
-#          - apple: sweet
-#          - banana: sweet
-#          - citrus: sour
-#          - rottenApple: bitter
-#          - almond: sweet
-#          - peanut: umami
-#          - truffle: umami
-#          - deadCap: umami
-
-- owl_class:
-      Mood:
-          SubClassOf: InternalSense
-
-- owl_multiple_individuals:
-      names:
-          - joy
-          - anger
-          - fear
-          - sadness
-      types:
-          - Mood
 
 - owl_multiple_individuals:
       names:
           - energy
           - health
+          - hydration
+          - toxicity
+          - satiety
       types:
           - InternalSense
 
@@ -758,16 +635,13 @@
   - Action:
       SubClassOf: "owl:Thing"
 
+# Applied to Consume TASK SET
+
 - owl_multiple_individuals:
       names:
-          - eat
-          - cookAndEat
-          - peelAndEat
-          - build
-          - attackAndEat
-          - attack
-          - runAway
-          - collect
+          - Consume
+          - Rest
+          - Flee
           - doNothing
       types:
           - Action
@@ -789,30 +663,6 @@
       Range: int
       Characteristics:
         - Functional
-
-- owl_multiple_individuals:
-    names:
-      - effect(sadness,1)
-    types:
-      - Effect
-
-#- owl_multiple_individuals:
-#    names:
-#        - effect(health,1)
-#        - effect(energy,1)
-#        - effect(joy,1)
-#        - effect(anger,1)
-#        - effect(sadness,1)
-#        - effect(fear,1)
-#
-#        - effect(health,-1)
-#        - effect(energy,-1)
-#        - effect(joy,-1)
-#        - effect(anger,-1)
-#        - effect(sadness,-1)
-#        - effect(fear,-1)
-#    types:
-#        - Effect
 
 - owl_class:
       Consequence:
@@ -836,57 +686,3 @@
     hasConsequenceEffect:
       Domain: Consequence
       Range: Effect
-
-#
-#- owl_multiple_individuals:
-#    names:
-#        - consequence(eat,medicinalHerb)
-#        - consequence(eatCooked,medicinalHerb)
-#        - consequence(eatPressed,medicinalHerb)
-#
-#        - consequence(eat,cactus)
-#        - consequence(eatCooked,cactus)
-#        - consequence(eatPressed,cactus)
-#
-#        - consequence(eat,rose)
-#        - consequence(eatCooked,rose)
-#        - consequence(eatPressed,rose)
-#        - consequence(doNothing,rose)
-#
-#        - consequence(eat,deadCap)
-#        - consequence(eatCooked,deadCap)
-#        - consequence(eatPressed,deadCap)
-#        - consequence(doNothing,deadCap)
-#
-#        - consequence(eat,apple)
-#        - consequence(eatCooked,apple)
-#        - consequence(eatPressed,apple)
-#        - consequence(doNothing,apple)
-#    types:
-#        - Consequence
-
-#- property_facts:
-#    hasConsequenceEffect:
-#      Facts:
-#        - consequence(eat,medicinalHerb): effect(health,1)
-#        - consequence(eatCooked,medicinalHerb): effect(health,1)
-#        - consequence(eatPressed,medicinalHerb): effect(health,1)
-#
-#        - consequence(eat,cactus): effect(health,-1)
-#        - consequence(eatCooked,cactus): effect(health,-1)
-#        - consequence(eatPressed,cactus): effect(health,-1)
-#
-#        - consequence(eat,rose): effect(health,-1)
-#        - consequence(eatCooked,rose): effect(health,-1)
-#        - consequence(eatPressed,rose): effect(energy,1)
-#
-#        - consequence(eat,deadCap): effect(health,-1)
-#        - consequence(eatCooked,deadCap): effect(energy,1)
-#        - consequence(eatPressed,deadCap): effect(health,-1)
-#
-#        - consequence(eat,apple): effect(energy,1)
-#        - consequence(eatCooked,apple): effect(energy,1)
-#        - consequence(eatPressed,apple): effect(energy,1)
-
-#- different_individuals:
-#    - __all__

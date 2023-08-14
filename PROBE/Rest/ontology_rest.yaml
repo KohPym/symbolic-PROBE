@@ -1,8 +1,8 @@
--owl_class:
+- owl_class:
 	Environement:
 		SubClassOf:"owl:Thing"
 
--multiple_owl_classes:
+- multiple_owl_classes:
   - Sense:
       SubClassOf: "owl:Thing"
   - ExternalSense:

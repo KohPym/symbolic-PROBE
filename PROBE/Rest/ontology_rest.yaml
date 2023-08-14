@@ -44,6 +44,8 @@
       SubClassOf: InternalSense
   - Wetness:
       SubClassOf: ExternalSense
+  - Predation:
+      SubClassOf: VisionSense
 
 
 # TEMPERATURE
@@ -89,7 +91,7 @@
 
 - owl_multiple_individuals:
       names:
-          - few
+        - few
   	  - neutral
    	  - dense
    
@@ -134,7 +136,7 @@
       - Distance
 
 - owl_object_property:
-    hasPressure:
+    hasPredation:
         Characteristics:
             - Functional
         Domain:

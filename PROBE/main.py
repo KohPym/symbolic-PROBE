@@ -9,6 +9,14 @@ for _ in range(100):
     env.summary_matrix()
     obs.update(decode_biome(env.current_biome['name']), env.summary_matrix()[-1])
 
+    def decision_structure(self, agent_energy, env_vitamins, agent_satiety, env_satiety, agent_hydration, env_hydration, agent_toxicity, env_toxicity, risk_aversion, env_predation):
+        predation_aversion = (70 * (2 - risk_aversion/100)) / 1.4
+        if env_predation > predation_aversion:
+            return predation_aversion
+        else:
+            return env_predation
+
+Multiplier en fonctino des besoins et des ressources
 
 # Create the agent
 bob = Agent(delta=2) # arg = 1,2 or 3 := difficulty

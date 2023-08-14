@@ -1,0 +1,3 @@
+-owl_class:
+	Environement:
+		SubClassOf:"owl:Thing"

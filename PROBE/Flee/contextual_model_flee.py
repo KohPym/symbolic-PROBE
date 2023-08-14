@@ -58,11 +58,11 @@ class AnteReliability_Flee:
 
 
 
-def calculate_result(Energy, Satiety, Hydration, Toxicity, Risk_Aversion, Predation):
-    if Predation > 70 * Risk_Aversion:
-        return 70 * Risk_Aversion
+def calculate_result(Energy, Satiety, Hydration, Toxicity, risk_aversion, Predation):
+    if Predation > ((70 * (1 + risk_aversion)) / 1.4):
+        return 70 * risk_aversion
     elif Energy > 20 and Satiety > 5 and Hydration > 5 and Toxicity > 70:
-        return (Toxicity / 2) * Risk_Aversion
+        return (Toxicity / 2) * risk_aversion
     else:
         return 0
 

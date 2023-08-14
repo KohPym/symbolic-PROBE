@@ -639,7 +639,6 @@
 
 - owl_multiple_individuals:
       names:
-          - Consume
           - Rest
           - Flee
           - doNothing

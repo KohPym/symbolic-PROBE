@@ -4,12 +4,12 @@ class PostReliability_Consume:
         # Others parameters are intially equal to 0 and we have an observation of our environment which serve as contextual_mapping.
         # We then apply a decision structure to introduce the interoception mechanism.
         self.observation = observation  # Somme et moeynne pour conso etc
-        self.contextual_mapping = self.observation
+        self.predictive_mapping = self.observation
 
     def update_predictive(self, biome, lambda_consume, learning_rate):  # Update du contexte F
-        self.contextual_mapping[biome] = learning_rate * mu + (1 - learning_rate) * self.contextual_mapping[biome] # Voué a converger
-        return self.contextual_mapping
+        self.predictive_mapping[biome] = learning_rate * mu + (1 - learning_rate) * self.predictive_mapping[biome] # Voué a converger
+        return self.predictive_mapping
 
-    def update_mu(self, lambda_consume, biome, tau, mu):
-        lambda_consume[biome] = self.contextual_mapping[biome] * np.sum(np.multiply(tau, mu))  # NORMALISE
-        return lambda_consume
+    def update_mu(self, lambda_consume, biome, mu_consume):
+        mu_consume[biome] = self.predictive_mapping[biome] * lambda_consume  # NORMALISE
+        return mu_consume

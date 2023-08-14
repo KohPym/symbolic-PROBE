@@ -1,0 +1,460 @@
+-owl_class:
+	Environement:
+		SubClassOf:"owl:Thing"
+
+- multiple_owl_classes:
+  - Sense:
+      SubClassOf: "owl:Thing"
+  - ExternalSense:
+      SubClassOf: Sense
+  - InternalSense:
+      SubClassOf: Sense
+
+- owl_class:
+      Distance:
+        SubClassOf: "owl:Thing"
+
+- owl_object_property:
+    hasThing:
+      Domain: Distance
+      Range: "owl:Thing"
+
+- owl_data_property:
+    hasDistanceValue:
+      Domain: Distance
+      Range: float
+      Characteristics:
+        - Functional
+
+- owl_data_property:
+    hasMaxDistance:
+      Domain: "owl:Thing"
+      Range: float
+      Characteristics:
+        - Functional
+
+- owl_inverse_property:
+    hasDistance:
+        Inverse: hasThing
+
+- multiple_owl_classes:
+  - VisionSense:
+      SubClassOf: ExternalSense
+  - Thermal:
+      SubClassOf: InternalSense
+  - Texture:
+      SubClassOf: TouchSense
+  - Pressure:
+      SubClassOf: TouchSense
+  - Wetness:
+      SubClassOf: TouchSense
+
+- owl_class:
+      VisionSense:
+          SubClassOf: ExternalSense
+
+- owl_class:
+      Color:
+          SubClassOf: VisionSense
+
+# TEMPERATURE
+
+- owl_multiple_individuals:
+      names:
+          - hot
+          - warm
+          - neutralTemperature
+          - cool
+          - cold
+      types:
+          - Thermal
+
+- owl_multiple_individuals:
+    names:
+        - distance(hot,warm,1)
+        - distance(hot,neutralTemperature,2)
+        - distance(hot,cool,3)
+        - distance(hot,cold,4)
+
+        - distance(warm,neutralTemperature,1)
+        - distance(warm,cool,2)
+        - distance(warm,cold,3)
+
+        - distance(neutralTemperature,cool,1)
+        - distance(neutralTemperature,cold,2)
+
+        - distance(cool,cold,1)
+    types:
+        - Distance
+
+- owl_object_property:
+    hasTemperature:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Thermal
+
+# VEGETATION
+
+- owl_multiple_individuals:
+      names:
+          - few
+	  - neutral
+   	  - dense
+   
+      types:
+          - Vegetation
+
+- owl_multiple_individuals:
+    names:
+      - distance(few,dense,2)
+      - distance(few,neutral,1)
+      
+      - distance(neutral,dense,1)
+
+    types:
+        - Distance
+
+- owl_object_property:
+    hasVegetation:
+        Characteristics:
+            - Functional
+        Domain:
+            - Environment
+        Range:
+            - Vegetation
+
+# OTHER
+
+- owl_multiple_individuals:
+      names:
+          - heavy
+          - light
+          - neutralWeight
+      types:
+          - Pressure
+
+- owl_multiple_individuals:
+    names:
+      - distance(heavy,light,2)
+      - distance(heavy,neutralWeight,1)
+      - distance(light,neutralWeight,1)
+    types:
+      - Distance
+
+- owl_object_property:
+    hasPressure:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Pressure
+
+# Wetness
+
+- owl_multiple_individuals:
+      names:
+          - dry
+          - neutralWetness
+          - wet
+      types:
+          - Wetness
+
+- owl_multiple_individuals:
+    names:
+      - distance(dry,neutralWetness,1)
+      - distance(dry,wet,2)
+      - distance(neutralWetness,wet,1)
+    types:
+      - Distance
+
+- owl_object_property:
+    hasWetness:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Wetness
+
+# others
+
+- owl_class:
+      VisionSense:
+          SubClassOf: ExternalSense
+
+- owl_class:
+      Color:
+          SubClassOf: VisionSense
+
+- owl_class:
+    Shape:
+      SubClassOf: VisionSense
+
+- owl_multiple_individuals:
+      names:
+        - cube
+        - sphere
+        - cylinder
+        - pyramid
+        - square
+        - circle
+        - triangle
+        - complexShape
+      types:
+          - Shape
+
+- owl_multiple_individuals:
+      names:
+        - distance(cube,sphere,3)
+        - distance(cube,cylinder,3)
+        - distance(cube,pyramid,2)
+        - distance(cube,square,2)
+        - distance(cube,circle,4)
+        - distance(cube,triangle,3)
+        - distance(cube,complexShape,4)
+
+        - distance(sphere,cylinder,2)
+        - distance(sphere,pyramid,3)
+        - distance(sphere,square,4)
+        - distance(sphere,circle,2)
+        - distance(sphere,triangle,4)
+        - distance(sphere,complexShape,4)
+
+        - distance(cylinder,pyramid,3)
+        - distance(cylinder,square,4)
+        - distance(cylinder,circle,2)
+        - distance(cylinder,triangle,4)
+        - distance(cylinder,complexShape,4)
+
+        - distance(pyramid,square,3)
+        - distance(pyramid,circle,4)
+        - distance(pyramid,triangle,2)
+        - distance(pyramid,complexShape,4)
+
+        - distance(square,circle,3)
+        - distance(square,triangle,2)
+        - distance(square,complexShape,4)
+
+        - distance(circle,triangle,3)
+        - distance(circle,complexShape,4)
+
+        - distance(triangle,complexShape,4)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasShape:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Shape
+
+- owl_class:
+    Lighting:
+      SubClassOf: VisionSense
+
+- owl_multiple_individuals:
+      names:
+        - noLight
+        - lighted
+      types:
+        - Lighting
+
+- owl_multiple_individuals:
+      names:
+        - distance(noLight,lighted,1)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasLight:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - Lighting
+
+- owl_class:
+    HearingSense:
+      SubClassOf: ExternalSense
+
+- owl_multiple_individuals:
+      names:
+        - soundless
+        - quietSound
+        - loud
+        - painfulSound
+      types:
+          - HearingSense
+
+- owl_multiple_individuals:
+      names:
+        - distance(soundless,quietSound,1)
+        - distance(soundless,loud,2)
+        - distance(soundless,painfulSound,3)
+
+        - distance(quietSound,loud,1)
+        - distance(quietSound,painfulSound,2)
+
+        - distance(loud,painfulSound,1)
+      types:
+          - Distance
+
+- owl_object_property:
+    hasSound:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - HearingSense
+
+- owl_class:
+    SmellSense:
+      SubClassOf: ExternalSense
+
+- owl_multiple_individuals:
+      names:
+        - goodSmell
+        - neutralSmell
+        - odorless
+        - badSmell
+      types:
+        - SmellSense
+
+- owl_multiple_individuals:
+      names:
+        - distance(goodSmell,neutralSmell,1)
+        - distance(goodSmell,odorless,2)
+        - distance(goodSmell,badSmell,3)
+
+        - distance(neutralSmell,odorless,1)
+        - distance(neutralSmell,badSmell,2)
+
+        - distance(odorless,badSmell,2)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasSmell:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+
+        Range:
+            - SmellSense
+
+- owl_class:
+    TasteSense:
+      SubClassOf: ExternalSense
+
+- owl_multiple_individuals:
+      names:
+        - sweet
+        - sour
+        - salty
+        - bitter
+        - umami
+      types:
+        - TasteSense
+
+- owl_multiple_individuals:
+      names:
+        - distance(sweet,sour,2)
+        - distance(sweet,salty,3)
+        - distance(sweet,bitter,3)
+        - distance(sweet,umami,2)
+
+        - distance(sour,salty,2)
+        - distance(sour,bitter,3)
+        - distance(sour,umami,3)
+
+        - distance(salty,bitter,2)
+        - distance(salty,umami,2)
+
+        - distance(bitter,umami,3)
+      types:
+        - Distance
+
+- owl_object_property:
+    hasTaste:
+        Characteristics:
+            - Functional
+        Domain:
+            - Entity
+        Range:
+            - TasteSense
+
+- owl_multiple_individuals:
+      names:
+          - energy
+          - health
+          - hydration
+          - toxicity
+          - satiety
+      types:
+          - InternalSense
+
+
+- multiple_owl_classes:
+  - Action:
+      SubClassOf: "owl:Thing"
+
+# Applied to Consume TASK SET
+
+- owl_multiple_individuals:
+      names:
+          - Consume
+          - Flee
+          - doNothing
+      types:
+          - Action
+
+- owl_class:
+      Effect:
+          SubClassOf: "owl:Thing"
+
+- owl_object_property:
+    gives:
+      Domain: Effect
+      Range: InternalSense
+      Characteristics:
+        - Functional
+
+- owl_data_property:
+    hasEffectValue:
+      Domain: Effect
+      Range: int
+      Characteristics:
+        - Functional
+
+- owl_class:
+      Consequence:
+          SubClassOf: "owl:Thing"
+
+- owl_object_property:
+    hasConsequenceAction:
+      Domain: Consequence
+      Range: Action
+      Characteristics:
+        - Functional
+
+- owl_object_property:
+    hasConsequenceEntity:
+      Domain: Consequence
+      Range: Entity
+      Characteristics:
+        - Functional
+
+- owl_object_property:
+    hasConsequenceEffect:
+      Domain: Consequence
+      Range: Effect

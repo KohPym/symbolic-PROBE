@@ -7,14 +7,14 @@ Rainforest:
     hasPredation: high
   consequences:
     Rest:
-      - effect(energy,5)
-      - effect(health,-1)
+      - effect(energy,6)
+      - effect(health,0)
     Flee: 
-      - effect(energy,-1)
+      - effect(energy,-2)
       - effect(health,1)
     doNothing:
-      - effect(energy,0)
-      - effect(health,0)
+      - effect(energy,9)
+      - effect(health,1)
 
 Desert:
   type: Biome
@@ -25,14 +25,14 @@ Desert:
     hasPredation: low
   consequences:
     Rest:
-      - effect(energy,2)
-      - effect(health,0)
+      - effect(energy,5)
+      - effect(health,1)
     Flee: 
-      - effect(energy,-1)
+      - effect(energy,4)
       - effect(health,-1)
     doNothing:
-      - effect(energy,0)
-      - effect(health,0)
+      - effect(energy,-3)
+      - effect(health,1)
 
 Tundra:
   type: Biome
@@ -43,13 +43,13 @@ Tundra:
     hasPredation: medium
   consequences:
     Rest:
-      - effect(energy,4)
-      - effect(health,0)
+      - effect(energy,-8)
+      - effect(health,-1)
     Flee: 
-      - effect(energy,-1)
+      - effect(energy,0)
       - effect(health,1)
     doNothing:
-      - effect(energy,0)
+      - effect(energy,6)
       - effect(health,0)
 
 Plains:
@@ -61,14 +61,14 @@ Plains:
     hasPredation: high
   consequences:
     Rest:
-      - effect(energy,6)
-      - effect(health,2)
-    Flee: 
-      - effect(energy,-1)
-      - effect(health,1)
-    doNothing:
-      - effect(energy,0)
+      - effect(energy,1)
       - effect(health,0)
+    Flee: 
+      - effect(energy,7)
+      - effect(health,-1)
+    doNothing:
+      - effect(energy,-2)
+      - effect(health,1)
 
 Savanna:
   type: Biome
@@ -79,13 +79,13 @@ Savanna:
     hasPredation: high
   consequences:
     Rest:
-      - effect(energy,5)
-      - effect(health,0)
-    Flee: 
-      - effect(energy,-1)
+      - effect(energy,3)
       - effect(health,1)
+    Flee: 
+      - effect(energy,-2)
+      - effect(health,0)
     doNothing:
-      - effect(energy,0)
+      - effect(energy,4)
       - effect(health,0)
 
 Mangrove:
@@ -97,14 +97,14 @@ Mangrove:
     hasPredation: medium
   consequences:
     Rest:
-      - effect(energy,7)
-      - effect(health,1)
+      - effect(energy,3)
+      - effect(health,-1)
     Flee: 
-      - effect(energy,-1)
+      - effect(energy,1)
       - effect(health,0)
     doNothing:
-      - effect(energy,0)
-      - effect(health,0)
+      - effect(energy,6)
+      - effect(health,1)
 
 Mountains:
   type: Biome
@@ -115,14 +115,14 @@ Mountains:
     hasPredation: high
   consequences:
     Rest:
-      - effect(energy,1)
-      - effect(health,-1)
-    Flee: 
-      - effect(energy,-1)
-      - effect(health,1)
-    doNothing:
-      - effect(energy,0)
+      - effect(energy,-6)
       - effect(health,0)
+    Flee: 
+      - effect(energy,2)
+      - effect(health,-1)
+    doNothing:
+      - effect(energy,-3)
+      - effect(health,1)
 
 Swamp:
   type: Biome
@@ -133,13 +133,13 @@ Swamp:
     hasPredation: medium
   consequences:
     Rest:
-      - effect(energy,5)
+      - effect(energy,0)
       - effect(health,1)
     Flee: 
-      - effect(energy,-1)
-      - effect(health,0)
+      - effect(energy,-2)
+      - effect(health,-1)
     doNothing:
-      - effect(energy,0)
+      - effect(energy,3)
       - effect(health,0)
 
 Taiga:
@@ -151,14 +151,14 @@ Taiga:
     hasPredation: high
   consequences:
     Rest:
-      - effect(energy,3)
+      - effect(energy,-2)
       - effect(health,-1)
     Flee: 
-      - effect(energy,-1)
-      - effect(health,1)
-    doNothing:
       - effect(energy,0)
-      - effect(health,0)
+      - effect(health,-1)
+    doNothing:
+      - effect(energy,8)
+      - effect(health,1)
 
 Beach:
   type: Biome
@@ -169,14 +169,14 @@ Beach:
     hasPredation: low
   consequences:
     Rest:
-      - effect(energy,8)
-      - effect(health,1)
+      - effect(energy,3)
+      - effect(health,0)
     Flee: 
-      - effect(energy,-1)
+      - effect(energy,-6)
       - effect(health,-1)
     doNothing:
-      - effect(energy,0)
-      - effect(health,0)
+      - effect(energy,1)
+      - effect(health,1)
 
 Apple:
   type: Fruit
@@ -193,22 +193,22 @@ Apple:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,4)
-      - effect(energy,7)
-      - effect(hydration,2)
-      - effect(toxicity,0)
-      - effect(health,1)
+      - effect(satiety,6)
+      - effect(energy,10)
+      - effect(hydration,-5)
+      - effect(toxicity,3)
+      - effect(health,-1)
     Flee: 
-      - effect(satiety,0)
-      - effect(energy,0)
+      - effect(satiety,6)
+      - effect(energy,-4)
       - effect(hydratation,0)
-      - effect(toxicity,0)
-      - effect(health,0)
+      - effect(toxicity,-6)
+      - effect(health,1)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
+      - effect(satiety,8)
+      - effect(energy,2)
+      - effect(hydration,-4)
+      - effet(toxicity,10)
       - effect(health,0)
 
 Nut:
@@ -226,23 +226,23 @@ Nut:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,3)
-      - effect(energy,9)
-      - effect(hydration,0)
-      - effect(toxicity,0)
-      - effect(health,1)
+      - effect(satiety,5)
+      - effect(energy,-4)
+      - effect(hydration,1)
+      - effect(toxicity,9)
+      - effect(health,0)
     Flee: 
-      - effect(satiety,0)
+      - effect(satiety,2)
       - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,0)
-      - effect(health,0)
+      - effect(hydratation,7)
+      - effect(toxicity,-5)
+      - effect(health,1)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
-      - effect(health,0)
+      - effect(satiety,2)
+      - effect(energy,8)
+      - effect(hydration,4)
+      - effet(toxicity,-6)
+      - effect(health,-1)
 
 Insect:
   type: Fauna
@@ -259,23 +259,23 @@ Insect:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,7)
-      - effect(energy,2)
-      - effect(hydration,0)
-      - effect(toxicity,0)
-      - effect(health,1)
+      - effect(satiety,-2)
+      - effect(energy,6)
+      - effect(hydration,-10)
+      - effect(toxicity,1)
+      - effect(health,0)
     Flee: 
-      - effect(satiety,0)
-      - effect(energy,0)
+      - effect(satiety,-9)
+      - effect(energy,5)
       - effect(hydratation,0)
-      - effect(toxicity,0)
-      - effect(health,0)
+      - effect(toxicity,4)
+      - effect(health,1)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
-      - effect(health,0)
+      - effect(satiety,6)
+      - effect(energy,-3)
+      - effect(hydration,7)
+      - effet(toxicity,2)
+      - effect(health,1)
 
 Rice:
   type: Cereal
@@ -292,23 +292,23 @@ Rice:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,9)
-      - effect(energy,1)
-      - effect(hydration,2)
-      - effect(toxicity,0)
-      - effect(health,1)
+      - effect(satiety,5)
+      - effect(energy,4)
+      - effect(hydration,9)
+      - effect(toxicity,-2)
+      - effect(health,0)
     Flee: 
       - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,0)
-      - effect(health,0)
+      - effect(energy,-5)
+      - effect(hydratation,3)
+      - effect(toxicity,4)
+      - effect(health,1)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
-      - effect(health,0)
+      - effect(satiety,-1)
+      - effect(energy,-7)
+      - effect(hydration,3)
+      - effet(toxicity,5)
+      - effect(health,-1)
 
 Date:
   type: Fruit
@@ -325,23 +325,23 @@ Date:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,3)
-      - effect(energy,1)
-      - effect(hydration,1)
-      - effect(toxicity,0)
+      - effect(satiety,10)
+      - effect(energy,2)
+      - effect(hydration,-4)
+      - effect(toxicity,6)
       - effect(health,0)
     Flee: 
       - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,0)
+      - effect(energy,5)
+      - effect(hydratation,-1)
+      - effect(toxicity,-4)
       - effect(health,0)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
-      - effect(health,0)
+      - effect(satiety,-5)
+      - effect(energy,2)
+      - effect(hydration,8)
+      - effet(toxicity,-3)
+      - effect(health,-1)
 
 Sorghum:
   type: Cereal
@@ -358,22 +358,22 @@ Sorghum:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,2)
-      - effect(energy,1)
-      - effect(hydration,0)
-      - effect(toxicity,0)
-      - effect(health,0)
+      - effect(satiety,-2)
+      - effect(energy,5)
+      - effect(hydration,10)
+      - effect(toxicity,1)
+      - effect(health,1)
     Flee: 
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,0)
-      - effect(health,0)
+      - effect(satiety,-5)
+      - effect(energy,-3)
+      - effect(hydratation,4)
+      - effect(toxicity,1)
+      - effect(health,-1)
     doNothing:
-      - effect(satiety,0)
+      - effect(satiety,-6)
       - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
+      - effect(hydration,4)
+      - effet(toxicity,-5)
       - effect(health,0)
 
 ElderBerry:
@@ -391,23 +391,23 @@ ElderBerry:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,1)
+      - effect(satiety,-1)
       - effect(energy,1)
-      - effect(hydration,1)
+      - effect(hydration,6)
+      - effect(toxicity,2)
+      - effect(health,0)
+    Flee: 
+      - effect(satiety,-7)
+      - effect(energy,9)
+      - effect(hydratation,10)
       - effect(toxicity,-8)
       - effect(health,-1)
-    Flee: 
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,8)
-      - effect(health,1)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
+      - effect(satiety,-6)
+      - effect(energy,1)
+      - effect(hydration,2)
       - effet(toxicity,0)
-      - effect(health,1)
+      - effect(health,0)
 
 Mushroom:
   type: Fungus
@@ -424,22 +424,22 @@ Mushroom:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,1)
-      - effect(energy,1)
+      - effect(satiety,-10)
+      - effect(energy,2)
       - effect(hydration,0)
-      - effect(toxicity,-8)
-      - effect(health,-1)
+      - effect(toxicity,7)
+      - effect(health,0)
     Flee: 
-      - effect(satiety,0)
+      - effect(satiety,9)
       - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,8)
-      - effect(health,1)
+      - effect(hydratation,4)
+      - effect(toxicity,-5)
+      - effect(health,0)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
+      - effect(satiety,10)
+      - effect(energy,-3)
+      - effect(hydration,-9)
+      - effet(toxicity,2)
       - effect(health,1)
 
 Salmon:
@@ -457,23 +457,23 @@ Salmon:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,2)
-      - effect(energy,2)
-      - effect(hydration,8)
-      - effect(toxicity,0)
-      - effect(health,1)
-    Flee: 
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,0)
-      - effect(health,0)
-    doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
+      - effect(satiety,6)
+      - effect(energy,-1)
       - effect(hydration,0)
-      - effet(toxicity,0)
+      - effect(toxicity,2)
       - effect(health,0)
+    Flee: 
+      - effect(satiety,5)
+      - effect(energy,-2)
+      - effect(hydratation,4)
+      - effect(toxicity,5)
+      - effect(health,-1)
+    doNothing:
+      - effect(satiety,-4)
+      - effect(energy,7)
+      - effect(hydration,2)
+      - effet(toxicity,-6)
+      - effect(health,-1)
 
 Water:
   type: Substance
@@ -490,20 +490,20 @@ Water:
     hasLight: noLight
   consequences:
     Consume:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,10)
-      - effect(toxicity,0)
-      - effect(health,1)
+      - effect(satiety,9)
+      - effect(energy,10)
+      - effect(hydration,1)
+      - effect(toxicity,-5)
+      - effect(health,-1)
     Flee: 
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydratation,0)
-      - effect(toxicity,0)
-      - effect(health,0)
+      - effect(satiety,-3)
+      - effect(energy,5)
+      - effect(hydratation,-10)
+      - effect(toxicity,9)
+      - effect(health,1)
     doNothing:
-      - effect(satiety,0)
-      - effect(energy,0)
-      - effect(hydration,0)
-      - effet(toxicity,0)
+      - effect(satiety,-9)
+      - effect(energy,2)
+      - effect(hydration,7)
+      - effet(toxicity,-5)
       - effect(health,0)

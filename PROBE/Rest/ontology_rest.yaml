@@ -42,20 +42,9 @@
       SubClassOf: ExternalSense
   - Thermal:
       SubClassOf: InternalSense
-  - Texture:
-      SubClassOf: TouchSense
-  - Pressure:
-      SubClassOf: TouchSense
   - Wetness:
-      SubClassOf: TouchSense
+      SubClassOf: ExternalSense
 
-- owl_class:
-      VisionSense:
-          SubClassOf: ExternalSense
-
-- owl_class:
-      Color:
-          SubClassOf: VisionSense
 
 # TEMPERATURE
 
@@ -92,7 +81,7 @@
         Characteristics:
             - Functional
         Domain:
-            - Entity
+            - Environment
         Range:
             - Thermal
 
@@ -105,7 +94,7 @@
    	  - dense
    
       types:
-          - Vegetation
+          - VisionSense
 
 - owl_multiple_individuals:
     names:
@@ -124,23 +113,23 @@
         Domain:
             - Environment
         Range:
-            - Vegetation
+            - VisionSense
 
 # OTHER
 
 - owl_multiple_individuals:
       names:
-          - heavy
-          - light
-          - neutralWeight
+          - high
+          - medium
+          - low
       types:
-          - Pressure
+          - VisionSense
 
 - owl_multiple_individuals:
     names:
-      - distance(heavy,light,2)
-      - distance(heavy,neutralWeight,1)
-      - distance(light,neutralWeight,1)
+      - distance(high,medium,2)
+      - distance(high,low,1)
+      - distance(low,medium,1)
     types:
       - Distance
 
@@ -149,9 +138,9 @@
         Characteristics:
             - Functional
         Domain:
-            - Entity
+            - Environment
         Range:
-            - Pressure
+            - VisionSense
 
 # Wetness
 
@@ -176,243 +165,15 @@
         Characteristics:
             - Functional
         Domain:
-            - Entity
+            - Environment
         Range:
             - Wetness
 
-# others
-
-- owl_class:
-      VisionSense:
-          SubClassOf: ExternalSense
-
-- owl_class:
-      Color:
-          SubClassOf: VisionSense
-
-- owl_class:
-    Shape:
-      SubClassOf: VisionSense
+# Applied to Rest TASK SET
 
 - owl_multiple_individuals:
       names:
-        - cube
-        - sphere
-        - cylinder
-        - pyramid
-        - square
-        - circle
-        - triangle
-        - complexShape
-      types:
-          - Shape
-
-- owl_multiple_individuals:
-      names:
-        - distance(cube,sphere,3)
-        - distance(cube,cylinder,3)
-        - distance(cube,pyramid,2)
-        - distance(cube,square,2)
-        - distance(cube,circle,4)
-        - distance(cube,triangle,3)
-        - distance(cube,complexShape,4)
-
-        - distance(sphere,cylinder,2)
-        - distance(sphere,pyramid,3)
-        - distance(sphere,square,4)
-        - distance(sphere,circle,2)
-        - distance(sphere,triangle,4)
-        - distance(sphere,complexShape,4)
-
-        - distance(cylinder,pyramid,3)
-        - distance(cylinder,square,4)
-        - distance(cylinder,circle,2)
-        - distance(cylinder,triangle,4)
-        - distance(cylinder,complexShape,4)
-
-        - distance(pyramid,square,3)
-        - distance(pyramid,circle,4)
-        - distance(pyramid,triangle,2)
-        - distance(pyramid,complexShape,4)
-
-        - distance(square,circle,3)
-        - distance(square,triangle,2)
-        - distance(square,complexShape,4)
-
-        - distance(circle,triangle,3)
-        - distance(circle,complexShape,4)
-
-        - distance(triangle,complexShape,4)
-      types:
-        - Distance
-
-- owl_object_property:
-    hasShape:
-        Characteristics:
-            - Functional
-        Domain:
-            - Entity
-        Range:
-            - Shape
-
-- owl_class:
-    Lighting:
-      SubClassOf: VisionSense
-
-- owl_multiple_individuals:
-      names:
-        - noLight
-        - lighted
-      types:
-        - Lighting
-
-- owl_multiple_individuals:
-      names:
-        - distance(noLight,lighted,1)
-      types:
-        - Distance
-
-- owl_object_property:
-    hasLight:
-        Characteristics:
-            - Functional
-        Domain:
-            - Entity
-        Range:
-            - Lighting
-
-- owl_class:
-    HearingSense:
-      SubClassOf: ExternalSense
-
-- owl_multiple_individuals:
-      names:
-        - soundless
-        - quietSound
-        - loud
-        - painfulSound
-      types:
-          - HearingSense
-
-- owl_multiple_individuals:
-      names:
-        - distance(soundless,quietSound,1)
-        - distance(soundless,loud,2)
-        - distance(soundless,painfulSound,3)
-
-        - distance(quietSound,loud,1)
-        - distance(quietSound,painfulSound,2)
-
-        - distance(loud,painfulSound,1)
-      types:
-          - Distance
-
-- owl_object_property:
-    hasSound:
-        Characteristics:
-            - Functional
-        Domain:
-            - Entity
-        Range:
-            - HearingSense
-
-- owl_class:
-    SmellSense:
-      SubClassOf: ExternalSense
-
-- owl_multiple_individuals:
-      names:
-        - goodSmell
-        - neutralSmell
-        - odorless
-        - badSmell
-      types:
-        - SmellSense
-
-- owl_multiple_individuals:
-      names:
-        - distance(goodSmell,neutralSmell,1)
-        - distance(goodSmell,odorless,2)
-        - distance(goodSmell,badSmell,3)
-
-        - distance(neutralSmell,odorless,1)
-        - distance(neutralSmell,badSmell,2)
-
-        - distance(odorless,badSmell,2)
-      types:
-        - Distance
-
-- owl_object_property:
-    hasSmell:
-        Characteristics:
-            - Functional
-        Domain:
-            - Entity
-
-        Range:
-            - SmellSense
-
-- owl_class:
-    TasteSense:
-      SubClassOf: ExternalSense
-
-- owl_multiple_individuals:
-      names:
-        - sweet
-        - sour
-        - salty
-        - bitter
-        - umami
-      types:
-        - TasteSense
-
-- owl_multiple_individuals:
-      names:
-        - distance(sweet,sour,2)
-        - distance(sweet,salty,3)
-        - distance(sweet,bitter,3)
-        - distance(sweet,umami,2)
-
-        - distance(sour,salty,2)
-        - distance(sour,bitter,3)
-        - distance(sour,umami,3)
-
-        - distance(salty,bitter,2)
-        - distance(salty,umami,2)
-
-        - distance(bitter,umami,3)
-      types:
-        - Distance
-
-- owl_object_property:
-    hasTaste:
-        Characteristics:
-            - Functional
-        Domain:
-            - Entity
-        Range:
-            - TasteSense
-
-- owl_multiple_individuals:
-      names:
-          - energy
-          - health
-          - hydration
-          - toxicity
-          - satiety
-      types:
-          - InternalSense
-
-
-- multiple_owl_classes:
-  - Action:
-      SubClassOf: "owl:Thing"
-
-# Applied to Consume TASK SET
-
-- owl_multiple_individuals:
-      names:
-          - Consume
+          - Rest
           - Flee
           - doNothing
       types:

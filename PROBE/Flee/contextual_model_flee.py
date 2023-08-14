@@ -46,6 +46,13 @@ class AnteReliability_Flee:
         # We then apply a decision structure to introduce the interoception mechanism.
         self.observation = observation # Somme et moeynne pour conso etc
         self.contextual_mapping = self.observation
+
+    def decision_structure(self, agent_energy, env_vitamins, agent_satiety, env_satiety, agent_hydration, env_hydration, agent_toxicity, env_toxicity, risk_aversion, env_predation):
+        predation_aversion = (70 * (2 - risk_aversion/100)) / 1.4
+        if env_predation > predation_aversion:
+            return predation_aversion
+        else:
+            return env_predation
         
     def update_contextual(self, biome, mu, learning_rate): # Update du contexte F
         self.contextual_mapping[biome] = learning_rate * mu + (1 - learning_rate) * self.contextual_mapping[biome]
@@ -58,20 +65,6 @@ class AnteReliability_Flee:
 
 
 
-def calculate_result(energy, Satiety, Hydration, Toxicity, risk_aversion, predation):
-    predation_aversion = (70 * (1 + risk_aversion)) / 1.4
-    if predation > predation_aversion:
-        return predation_aversion
-    elif Energy > 20 and Satiety > 5 and Hydration > 5 and Toxicity > 70:
-        return (Toxicity / 2) * risk_aversion
-    else:
-        return 0
-
-class ContextualMapping_Flee:
-    def __init__(self, mu, tau, t):
-        self.mu = mu
-        self.tau = tau
-        self.t = t
     
     def contextual_mapping(self, context):
         # On calcule le produit scalaire entre x1 et x2

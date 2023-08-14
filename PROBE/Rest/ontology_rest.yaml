@@ -1,6 +1,6 @@
 - owl_class:
-      Environement:
-	   SubClassOf:"owl:Thing"
+      Environment:
+          SubClassOf: "owl:Thing"
 
 - multiple_owl_classes:
   - Sense:
@@ -219,3 +219,4 @@
     hasConsequenceEffect:
       Domain: Consequence
       Range: Effect
+

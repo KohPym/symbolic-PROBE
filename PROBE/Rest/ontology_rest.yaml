@@ -1,6 +1,6 @@
 - owl_class:
-	Environement:
-		SubClassOf:"owl:Thing"
+      Environement:
+	   SubClassOf:"owl:Thing"
 
 - multiple_owl_classes:
   - Sense:

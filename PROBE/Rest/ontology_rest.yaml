@@ -90,7 +90,7 @@
 - owl_multiple_individuals:
       names:
           - few
-	  - neutral
+  	  - neutral
    	  - dense
    
       types:

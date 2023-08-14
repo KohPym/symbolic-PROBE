@@ -1,7 +1,7 @@
 Rainforest:
   type: Biome
   attrs:
-    hasVagetation: dense
+    hasVegetation: dense
     hasTemperature: neutralTemperature
     hasWetness: wet
     hasPredation: high
@@ -19,7 +19,7 @@ Rainforest:
 Desert:
   type: Biome
   attrs:
-    hasVagetation: few
+    hasVegetation: few
     hasTemperature: warm
     hasWetness: dry
     hasPredation: low
@@ -37,7 +37,7 @@ Desert:
 Tundra:
   type: Biome
   attrs:
-    hasVagetation: few
+    hasVegetation: few
     hasTemperature: cold
     hasWetness: dry
     hasPredation: medium
@@ -55,7 +55,7 @@ Tundra:
 Plains:
   type: Biome
   attrs:
-    hasVagetation: neutral
+    hasVegetation: neutral
     hasTemperature: neutralTemperature
     hasWetness: neutralWetness
     hasPredation: high
@@ -73,7 +73,7 @@ Plains:
 Savanna:
   type: Biome
   attrs:
-    hasVagetation: neutral
+    hasVegetation: neutral
     hasTemperature: neutralTemperature
     hasWetness: neutralWetness
     hasPredation: high
@@ -91,7 +91,7 @@ Savanna:
 Mangrove:
   type: Biome
   attrs:
-    hasVagetation: dense
+    hasVegetation: dense
     hasTemperature: neutralTemperature
     hasWetness: wet
     hasPredation: medium
@@ -109,7 +109,7 @@ Mangrove:
 Mountains:
   type: Biome
   attrs:
-    hasVagetation: neutral
+    hasVegetation: neutral
     hasTemperature: cold
     hasWetness: neutralWetness
     hasPredation: high
@@ -127,7 +127,7 @@ Mountains:
 Swamp:
   type: Biome
   attrs:
-    hasVagetation: dense
+    hasVegetation: dense
     hasTemperature: neutralTemperature
     hasWetness: wet
     hasPredation: medium
@@ -145,7 +145,7 @@ Swamp:
 Taiga:
   type: Biome
   attrs:
-    hasVagetation: neutral
+    hasVegetation: neutral
     hasTemperature: cold
     hasWetness: neutralWetness
     hasPredation: high
@@ -163,7 +163,7 @@ Taiga:
 Beach:
   type: Biome
   attrs:
-    hasVagetation: few
+    hasVegetation: few
     hasTemperature: neutralTemperature
     hasWetness: neutralWetness
     hasPredation: low

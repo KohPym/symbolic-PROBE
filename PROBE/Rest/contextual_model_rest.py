@@ -10,6 +10,6 @@ class AnteReliability_Rest:
         self.contextual_mapping[biome] = learning_rate * mu + (1 - learning_rate) * self.contextual_mapping[biome] # Voué a converger
         return self.contextual_mapping
 
-    def update_lambda(self, lambda_flee, biome, tau, mu):
+    def update_lambda(self, lambda_rest, biome, tau, mu):
         lambda_rest[biome] = self.contextual_mapping[biome] * np.sum(np.multiply(tau, mu))  # NORMALISE
         return lambda_rest

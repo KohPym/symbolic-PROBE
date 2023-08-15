@@ -139,7 +139,7 @@ food9 = {
     'toxicity': 0,
     'quantity': 1,
     'humidity': 'moderate',
-    'vegetation': True,
+    'vegetation': False,
     'water': True,
     'altitude': random.randint(-500, 1000),
 }

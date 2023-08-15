@@ -2,7 +2,7 @@
 
 A reinforcement learning algorithm that implements Symbolic Q-Learning as presented in the paper:
 
-Chloé Mercier, Frédéric Alexandre, Thierry Viéville. Reinforcement Symbolic Learning. ICANN 2021
+Chloé Mercier, Frédéric Alexandre, Thierry Viéville. Reinforcement Symbolic Learning. ICANN 2021 
 - 30th International Conference on Artificial Neural Networks, Sep 2021, Bratislava / Virtual, Slovakia.
 ffhal-03327706f
 https://hal.inria.fr/hal-03327706/document.

@@ -1,11 +1,19 @@
-models = [model = SymbolicQLearning(env, env.dist) for _ in range(8)]
+from SymbolicEnv import SymbolicEnv
 
-models[i].learn(...)
+class SelectiveModel_Flee:
+    def __init__(self):
+        self.env = SymbolicEnv()
+        check_env(env)
 
-total_timesteps=10000, learning_rate=0.1, discount_factor=0.5, radius=0.001, log_name=f"runs/symbolic-ql-{r}"
+    def train_qlearning(self, total_timesteps, learning_rate, discount_factor, log_name="runs/ql"):
+        model = QLearning(self.env)
+        model.learn(total_timesteps, learning_rate, discount_factor, log_name)
 
-env1 = SymbolicEnv("folder/o1.yaml", "folder/i1.yaml")
-env2 = SymbolicEnv("folder/o2.yaml", "folder/i2.yaml")
-...
-
-np.argmax(model.qtable[tuple(observation)])
+    def train_symbolic_qlearning(self, total_timesteps, learning_rate, discount_factor, radius, log_name=f"runs/symbolic-ql-{r}"):
+        radii = np.linspace(0.01, 0.25, 10)
+        for r in radii:
+            model = SymbolicQLearning(self.env, self.env.dist)
+            model.learn(total_timesteps, learning_rate, discount_factor, radius, log_name)
+          
+    def action_to_choose(self):
+      return np.argmax(model.qtable[tuple(observation)])

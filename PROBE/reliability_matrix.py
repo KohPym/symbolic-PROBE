@@ -75,16 +75,3 @@ class PostReliability:
             self.matrix_flee[i][t] = self.n_matrix[1]
             self.matrix_random[i][t] = self.n_matrix[2]
             self.matrix_rest[i][t] = self.n_matrix[3]
-
-
-ante_reliability = AnteReliability([1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-                                   [11, 12, 13, 14, 15, 16, 17, 18, 19, 20],
-                                   [21, 22, 23, 24, 25, 26, 27, 28, 29, 30],
-                                   [31, 32, 33, 34, 35, 36, 37, 38, 39, 40], 100)
-
-new_elements_consume = [101, 102, 103, 104, 105, 106, 107, 108, 109, 110]
-new_elements_flee = [111, 112, 113, 114, 115, 116, 117, 118, 119, 120]
-new_elements_random = [121, 122, 123, 124, 125, 126, 127, 128, 129, 130]
-new_elements_rest = [131, 132, 133, 134, 135, 136, 137, 138, 139, 140]
-
-ante_reliability.update(new_elements_consume, new_elements_flee, new_elements_random, new_elements_rest, 1)

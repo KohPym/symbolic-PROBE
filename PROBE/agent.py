@@ -3,9 +3,9 @@
 def homeostasis(health, energy, satiety, hydration, toxicity):
     # Define the weights for each parameter
     health_weight = 0.35
-    energy_weight = 0.1
+    energy_weight = 0.2
     satiety_weight = 0.2
-    hydration_weight = 0.2
+    hydration_weight = 0.1
     toxicity_weight = 0.15
 
     # Calculate the homeostasis score
@@ -124,3 +124,4 @@ class Agent:
         self.toxicity += value
 
 # Note that we could use a global method for modifying the agent's attributes [modify(0,1,0,5,0) for example] but for the sake of readability, I have opted for independent parts.
+

@@ -5,7 +5,8 @@ This is a computational implementation of the PROBE model with a perspective of 
 # Experiment type
 
 The task is a survival task where an agent is supposed so survive taking care of his/her own statistics.
-(NOTE: Statistics here refers to level of Health, Energy, Satiety, Hydration and Toxicity).
+> [!NOTE]
+> Statistics here refers to level of Health, Energy, Satiety, Hydration and Toxicity
 
 # PROBE Folder
 
